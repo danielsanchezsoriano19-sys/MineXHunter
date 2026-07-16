@@ -1,0 +1,205 @@
+{
+  "mod_elements": [
+    {
+      "name": "NacimientodenenAlPresionarClickDerechoEnElAire",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nacimientodenen_al_presionar_click_derecho_en_el_aire",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/NacimientodenenAlPresionarClickDerechoEnElAireProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Nacimientodenen",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awakening_of_nen",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/mine_x_hunter/models/item/awakening_of_nen.json",
+          "src/main/java/net/mcreator/minexhunter/item/NacimientodenenItem.java"
+        ]
+      }
+    },
+    {
+      "name": "AuraNenOverlay",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aura_nen_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/client/screens/AuraNenOverlayOverlay.java"
+        ]
+      }
+    },
+    {
+      "name": "AuraTextoLogica",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aura_texto_logica",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/AuraTextoLogicaProcedure.java"
+        ],
+        "return_type": "string"
+      }
+    },
+    {
+      "name": "AuraNenOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aura_nen_overlay_display_overlay_ingame",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/AuraNenOverlayDisplayOverlayIngameProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "AuraRegeneration",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aura_regeneration",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/AuraRegenerationProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Commandsetmaxnen",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "commandsetmaxnen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/CommandsetmaxnenCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "AuraMaxComandoLogica",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "aura_max_comando_logica",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/AuraMaxComandoLogicaProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "Nendesbloqueado",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "nentype",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "auramax",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "100.0"
+    },
+    {
+      "name": "aura_actual",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0.0"
+    },
+    {
+      "name": "TenActive",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "RenActive",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item.mine_x_hunter.awakening_of_nen": "Awakening of Nen",
+      "gui.mine_x_hunter.aura_nen_overlay.label_aura": "Aura:",
+      "gui.mine_x_hunter.aura_nen_overlay.label_1": "1"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "mine_x_hunter",
+    "modName": "Mine X Hunter",
+    "version": "1.0.0",
+    "author": "MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "net.mcreator.minexhunter"
+  },
+  "mcreatorVersion": 202600114619
+}
