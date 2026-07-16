@@ -88,9 +88,6 @@ public class MineXHunterModVariables {
 					clone.medidor_entrenamiento_corriendo = original.medidor_entrenamiento_corriendo;
 					clone.nivel_velocidad_entrenando = original.nivel_velocidad_entrenando;
 					clone.limite_velocidad_maxima = original.limite_velocidad_maxima;
-					clone.medidor_dano_recibido = original.medidor_dano_recibido;
-					clone.vida_extra_entrenada = original.vida_extra_entrenada;
-					clone.vida_extra_maxima = original.vida_extra_maxima;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -139,9 +136,6 @@ public class MineXHunterModVariables {
 		public double medidor_entrenamiento_corriendo = 0;
 		public double nivel_velocidad_entrenando = 0;
 		public double limite_velocidad_maxima = 4.0;
-		public double medidor_dano_recibido = 0;
-		public double vida_extra_entrenada = 0;
-		public double vida_extra_maxima = 20.0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -155,9 +149,6 @@ public class MineXHunterModVariables {
 			nbt.putDouble("medidor_entrenamiento_corriendo", medidor_entrenamiento_corriendo);
 			nbt.putDouble("nivel_velocidad_entrenando", nivel_velocidad_entrenando);
 			nbt.putDouble("limite_velocidad_maxima", limite_velocidad_maxima);
-			nbt.putDouble("medidor_dano_recibido", medidor_dano_recibido);
-			nbt.putDouble("vida_extra_entrenada", vida_extra_entrenada);
-			nbt.putDouble("vida_extra_maxima", vida_extra_maxima);
 			return nbt;
 		}
 
@@ -172,9 +163,6 @@ public class MineXHunterModVariables {
 			medidor_entrenamiento_corriendo = nbt.getDouble("medidor_entrenamiento_corriendo");
 			nivel_velocidad_entrenando = nbt.getDouble("nivel_velocidad_entrenando");
 			limite_velocidad_maxima = nbt.getDouble("limite_velocidad_maxima");
-			medidor_dano_recibido = nbt.getDouble("medidor_dano_recibido");
-			vida_extra_entrenada = nbt.getDouble("vida_extra_entrenada");
-			vida_extra_maxima = nbt.getDouble("vida_extra_maxima");
 		}
 
 		public void markSyncDirty() {
@@ -206,9 +194,6 @@ public class MineXHunterModVariables {
 						cap.medidor_entrenamiento_corriendo = message.data().medidor_entrenamiento_corriendo;
 						cap.nivel_velocidad_entrenando = message.data().nivel_velocidad_entrenando;
 						cap.limite_velocidad_maxima = message.data().limite_velocidad_maxima;
-						cap.medidor_dano_recibido = message.data().medidor_dano_recibido;
-						cap.vida_extra_entrenada = message.data().vida_extra_entrenada;
-						cap.vida_extra_maxima = message.data().vida_extra_maxima;
 					});
 			});
 			context.setPacketHandled(true);
