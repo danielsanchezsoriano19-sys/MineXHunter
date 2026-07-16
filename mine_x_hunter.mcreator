@@ -100,40 +100,6 @@
       }
     },
     {
-      "name": "Commandsetmaxnen",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "commandsetmaxnen",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/command/CommandsetmaxnenCommand.java"
-        ]
-      }
-    },
-    {
-      "name": "AuraMaxComandoLogica",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "aura_max_comando_logica",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/AuraMaxComandoLogicaProcedure.java"
-        ]
-      }
-    },
-    {
       "name": "EntrenamientoCorrer",
       "type": "procedure",
       "compiles": true,
