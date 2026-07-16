@@ -86,6 +86,8 @@ public class MineXHunterModVariables {
 					clone.TenActive = original.TenActive;
 					clone.RenActive = original.RenActive;
 					clone.medidor_entrenamiento_corriendo = original.medidor_entrenamiento_corriendo;
+					clone.nivel_velocidad_entrenando = original.nivel_velocidad_entrenando;
+					clone.limite_velocidad_maxima = original.limite_velocidad_maxima;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -132,6 +134,8 @@ public class MineXHunterModVariables {
 		public boolean TenActive = false;
 		public boolean RenActive = false;
 		public double medidor_entrenamiento_corriendo = 0;
+		public double nivel_velocidad_entrenando = 0;
+		public double limite_velocidad_maxima = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -143,6 +147,8 @@ public class MineXHunterModVariables {
 			nbt.putBoolean("TenActive", TenActive);
 			nbt.putBoolean("RenActive", RenActive);
 			nbt.putDouble("medidor_entrenamiento_corriendo", medidor_entrenamiento_corriendo);
+			nbt.putDouble("nivel_velocidad_entrenando", nivel_velocidad_entrenando);
+			nbt.putDouble("limite_velocidad_maxima", limite_velocidad_maxima);
 			return nbt;
 		}
 
@@ -155,6 +161,8 @@ public class MineXHunterModVariables {
 			TenActive = nbt.getBoolean("TenActive");
 			RenActive = nbt.getBoolean("RenActive");
 			medidor_entrenamiento_corriendo = nbt.getDouble("medidor_entrenamiento_corriendo");
+			nivel_velocidad_entrenando = nbt.getDouble("nivel_velocidad_entrenando");
+			limite_velocidad_maxima = nbt.getDouble("limite_velocidad_maxima");
 		}
 
 		public void markSyncDirty() {
@@ -184,6 +192,8 @@ public class MineXHunterModVariables {
 						cap.TenActive = message.data().TenActive;
 						cap.RenActive = message.data().RenActive;
 						cap.medidor_entrenamiento_corriendo = message.data().medidor_entrenamiento_corriendo;
+						cap.nivel_velocidad_entrenando = message.data().nivel_velocidad_entrenando;
+						cap.limite_velocidad_maxima = message.data().limite_velocidad_maxima;
 					});
 			});
 			context.setPacketHandled(true);

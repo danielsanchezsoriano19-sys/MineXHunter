@@ -123,6 +123,24 @@
           "src/main/java/net/mcreator/minexhunter/procedures/AuraMaxComandoLogicaProcedure.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoCorrer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_correr",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoCorrerProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -164,6 +182,18 @@
     },
     {
       "name": "medidor_entrenamiento_corriendo",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "nivel_velocidad_entrenando",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "limite_velocidad_maxima",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
