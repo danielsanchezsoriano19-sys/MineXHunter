@@ -176,10 +176,10 @@
   "metadata": {
     "files": [
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
-      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+      "src/main/resources/META-INF/mods.toml"
     ]
   },
   "foldersRoot": {
