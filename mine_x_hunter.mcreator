@@ -150,6 +150,24 @@
           "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoCorrerProcedure.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoVida",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_vida",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoVidaProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -206,6 +224,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "4.0"
+    },
+    {
+      "name": "medidor_dano_recibido",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "vida_extra_entrenada",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "vida_extra_maxima",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "20.0"
     }
   ],
   "sound_elements": [],
@@ -221,10 +257,10 @@
   "metadata": {
     "files": [
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
-      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+      "src/main/resources/META-INF/mods.toml"
     ]
   },
   "foldersRoot": {
