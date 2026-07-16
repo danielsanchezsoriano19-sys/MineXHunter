@@ -85,6 +85,7 @@ public class MineXHunterModVariables {
 					clone.aura_actual = original.aura_actual;
 					clone.TenActive = original.TenActive;
 					clone.RenActive = original.RenActive;
+					clone.medidor_entrenamiento_corriendo = original.medidor_entrenamiento_corriendo;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -130,6 +131,7 @@ public class MineXHunterModVariables {
 		public double aura_actual = 0.0;
 		public boolean TenActive = false;
 		public boolean RenActive = false;
+		public double medidor_entrenamiento_corriendo = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -140,6 +142,7 @@ public class MineXHunterModVariables {
 			nbt.putDouble("aura_actual", aura_actual);
 			nbt.putBoolean("TenActive", TenActive);
 			nbt.putBoolean("RenActive", RenActive);
+			nbt.putDouble("medidor_entrenamiento_corriendo", medidor_entrenamiento_corriendo);
 			return nbt;
 		}
 
@@ -151,6 +154,7 @@ public class MineXHunterModVariables {
 			aura_actual = nbt.getDouble("aura_actual");
 			TenActive = nbt.getBoolean("TenActive");
 			RenActive = nbt.getBoolean("RenActive");
+			medidor_entrenamiento_corriendo = nbt.getDouble("medidor_entrenamiento_corriendo");
 		}
 
 		public void markSyncDirty() {
@@ -179,6 +183,7 @@ public class MineXHunterModVariables {
 						cap.aura_actual = message.data().aura_actual;
 						cap.TenActive = message.data().TenActive;
 						cap.RenActive = message.data().RenActive;
+						cap.medidor_entrenamiento_corriendo = message.data().medidor_entrenamiento_corriendo;
 					});
 			});
 			context.setPacketHandled(true);
