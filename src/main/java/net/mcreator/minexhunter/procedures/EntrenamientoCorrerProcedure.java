@@ -44,7 +44,7 @@ public class EntrenamientoCorrerProcedure {
 			}
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
-					capability.medidor_entrenamiento_corriendo = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).nivel_velocidad_entrenando + 0.01;
+					capability.medidor_entrenamiento_corriendo = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).medidor_entrenamiento_corriendo + 0.01;
 					capability.markSyncDirty();
 				});
 			}

@@ -135,7 +135,7 @@ public class MineXHunterModVariables {
 		public boolean RenActive = false;
 		public double medidor_entrenamiento_corriendo = 0;
 		public double nivel_velocidad_entrenando = 0;
-		public double limite_velocidad_maxima = 0;
+		public double limite_velocidad_maxima = 4.0;
 
 		@Override
 		public CompoundTag serializeNBT() {

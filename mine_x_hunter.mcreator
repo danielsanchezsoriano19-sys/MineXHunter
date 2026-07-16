@@ -196,7 +196,7 @@
       "name": "limite_velocidad_maxima",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "4.0"
     }
   ],
   "sound_elements": [],
