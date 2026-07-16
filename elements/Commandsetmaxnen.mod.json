@@ -2,9 +2,9 @@
   "_fv": 85,
   "_type": "command",
   "definition": {
-    "commandName": "commandsetmaxnen",
+    "commandName": "CommandSetMaxNen",
     "type": "STANDARD",
     "permissionLevel": "2",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"call_procedure\"><field name=\"procedure\"></field></block></next></block></xml>"
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" collapsed=\"true\" deletable=\"false\" x=\"980\" y=\"562\"><next><block type=\"number_default\"><field name=\"name\">cantidad</field></block></next></block></xml>"
   }
 }
