@@ -1,5 +1,21 @@
 package net.mcreator.minexhunter.client.gui;
 
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.GuiGraphics;
+
+import net.mcreator.minexhunter.world.inventory.SkillMenuMenu;
+import net.mcreator.minexhunter.network.SkillMenuButtonMessage;
+import net.mcreator.minexhunter.init.MineXHunterModScreens;
+import net.mcreator.minexhunter.MineXHunterMod;
+
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> implements MineXHunterModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;
@@ -60,9 +76,21 @@ public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> impl
 	public void init() {
 		super.init();
 		button_comprar_garras_15_xp = Button.builder(Component.translatable("gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp"), e -> {
+			int x = SkillMenuScreen.this.x;
+			int y = SkillMenuScreen.this.y;
+			if (true) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new SkillMenuButtonMessage(0, x, y, z));
+				SkillMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
 		}).bounds(this.leftPos + 23, this.topPos + 41, 135, 20).build();
 		this.addRenderableWidget(button_comprar_garras_15_xp);
 		button_comprar_inmunidad_20_xp = Button.builder(Component.translatable("gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp"), e -> {
+			int x = SkillMenuScreen.this.x;
+			int y = SkillMenuScreen.this.y;
+			if (true) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new SkillMenuButtonMessage(1, x, y, z));
+				SkillMenuButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
 		}).bounds(this.leftPos + 14, this.topPos + 92, 150, 20).build();
 		this.addRenderableWidget(button_comprar_inmunidad_20_xp);
 	}

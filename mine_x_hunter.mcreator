@@ -340,6 +340,36 @@
       }
     },
     {
+      "name": "Comandobloodlust",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "comandobloodlust",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ComandobloodlustProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SetBloodLust",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_blood_lust",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/SetBloodLustCommand.java"
+        ]
+      }
+    },
+    {
       "name": "EntrenamientoSedSangre",
       "type": "procedure",
       "compiles": true,
@@ -358,32 +388,94 @@
       }
     },
     {
-      "name": "SetBloodLust",
-      "type": "command",
+      "name": "BotonComprar",
+      "type": "keybind",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "set_blood_lust",
+      "registry_name": "boton_comprar",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/minexhunter/command/SetBloodLustCommand.java"
+          "src/main/java/net/mcreator/minexhunter/network/BotonComprarMessage.java"
         ]
       }
     },
     {
-      "name": "Comandobloodlust",
+      "name": "BotonComprarOnKeyPressed",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "comandobloodlust",
+      "registry_name": "boton_comprar_on_key_pressed",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/ComandobloodlustProcedure.java"
+          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprarInmunidad",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar_inmunidad",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/BotonComprarInmunidadMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprarInmunidadOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar_inmunidad_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarInmunidadOnKeyPressedProcedure.java"
         ]
       }
     }
@@ -510,12 +602,6 @@
       "value": "0"
     },
     {
-      "name": "SedSangreDesbloqueada",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
       "name": "SedSangreActiva",
       "type": "logic",
       "scope": "player_persistent",
@@ -526,6 +612,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "SedSangreDesbloqueada",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -536,20 +628,23 @@
       "item.mine_x_hunter.awakening_of_nen": "Awakening of Nen",
       "gui.mine_x_hunter.aura_nen_overlay.label_aura": "Aura:",
       "gui.mine_x_hunter.aura_nen_overlay.label_1": "1",
-      "key.mine_x_hunter.tenkey": "Ten"
+      "key.mine_x_hunter.tenkey": "Ten",
+      "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
+      "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
+      "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)"
     }
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
-      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+      "src/main/resources/META-INF/mods.toml"
     ]
   },
   "foldersRoot": {
