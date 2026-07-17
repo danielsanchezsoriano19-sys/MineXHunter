@@ -1,6 +1,10 @@
 package net.mcreator.minexhunter.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
+
+import net.mcreator.minexhunter.network.MineXHunterModVariables;
 
 public class RenkeyOnKeyPressedProcedure {
 	public static void execute(Entity entity) {

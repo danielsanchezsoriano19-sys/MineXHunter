@@ -4,6 +4,9 @@
   "definition": {
     "triggerKey": "G",
     "keyBindingName": "Skill Menu Zoldyick Key",
-    "keyBindingCategoryKey": "misc"
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "SkillMenuZoldyickKeyOnKeyPressed"
+    }
   }
 }
