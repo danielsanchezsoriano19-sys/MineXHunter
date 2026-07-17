@@ -184,7 +184,7 @@
     {
       "name": "EntrenamientoTen",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "entrenamiento_ten",
       "metadata": {
