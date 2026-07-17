@@ -215,7 +215,7 @@
     {
       "name": "SkillMenuZoldyickKeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "skill_menu_zoldyick_key_on_key_pressed",
       "metadata": {
@@ -261,7 +261,7 @@
     {
       "name": "ContratoSangreZoldyckRightclicked",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "contrato_sangre_zoldyck_rightclicked",
       "metadata": {
@@ -372,7 +372,7 @@
     {
       "name": "EntrenamientoSedSangre",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "entrenamiento_sed_sangre",
       "metadata": {
@@ -636,15 +636,15 @@
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/resources/META-INF/mods.toml"
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
     ]
   },
   "foldersRoot": {
