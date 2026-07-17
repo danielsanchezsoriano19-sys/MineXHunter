@@ -215,7 +215,7 @@
     {
       "name": "SkillMenuZoldyickKeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "skill_menu_zoldyick_key_on_key_pressed",
       "metadata": {
@@ -261,7 +261,7 @@
     {
       "name": "ContratoSangreZoldyckRightclicked",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "contrato_sangre_zoldyck_rightclicked",
       "metadata": {
