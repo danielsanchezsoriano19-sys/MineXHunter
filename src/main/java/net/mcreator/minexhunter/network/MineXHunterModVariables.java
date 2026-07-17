@@ -104,6 +104,9 @@ public class MineXHunterModVariables {
 					clone.unlocked_inmunity = original.unlocked_inmunity;
 					clone.NivelRen = original.NivelRen;
 					clone.XPREN = original.XPREN;
+					clone.SedSangreDesbloqueada = original.SedSangreDesbloqueada;
+					clone.SedSangreActiva = original.SedSangreActiva;
+					clone.BarraSedSangre = original.BarraSedSangre;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -314,6 +317,9 @@ public class MineXHunterModVariables {
 		public boolean unlocked_inmunity = false;
 		public double NivelRen = 0;
 		public double XPREN = 0;
+		public boolean SedSangreDesbloqueada = false;
+		public boolean SedSangreActiva = false;
+		public double BarraSedSangre = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -337,6 +343,9 @@ public class MineXHunterModVariables {
 			nbt.putBoolean("unlocked_inmunity", unlocked_inmunity);
 			nbt.putDouble("NivelRen", NivelRen);
 			nbt.putDouble("XPREN", XPREN);
+			nbt.putBoolean("SedSangreDesbloqueada", SedSangreDesbloqueada);
+			nbt.putBoolean("SedSangreActiva", SedSangreActiva);
+			nbt.putDouble("BarraSedSangre", BarraSedSangre);
 			return nbt;
 		}
 
@@ -361,6 +370,9 @@ public class MineXHunterModVariables {
 			unlocked_inmunity = nbt.getBoolean("unlocked_inmunity");
 			NivelRen = nbt.getDouble("NivelRen");
 			XPREN = nbt.getDouble("XPREN");
+			SedSangreDesbloqueada = nbt.getBoolean("SedSangreDesbloqueada");
+			SedSangreActiva = nbt.getBoolean("SedSangreActiva");
+			BarraSedSangre = nbt.getDouble("BarraSedSangre");
 		}
 
 		public void markSyncDirty() {
@@ -402,6 +414,9 @@ public class MineXHunterModVariables {
 						cap.unlocked_inmunity = message.data().unlocked_inmunity;
 						cap.NivelRen = message.data().NivelRen;
 						cap.XPREN = message.data().XPREN;
+						cap.SedSangreDesbloqueada = message.data().SedSangreDesbloqueada;
+						cap.SedSangreActiva = message.data().SedSangreActiva;
+						cap.BarraSedSangre = message.data().BarraSedSangre;
 					});
 			});
 			context.setPacketHandled(true);

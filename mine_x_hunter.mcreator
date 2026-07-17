@@ -338,6 +338,54 @@
           "src/main/java/net/mcreator/minexhunter/procedures/RenkeyOnKeyPressedProcedure.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoSedSangre",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_sed_sangre",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoSedSangreProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SetBloodLust",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_blood_lust",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/SetBloodLustCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "Comandobloodlust",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "comandobloodlust",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ComandobloodlustProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -460,6 +508,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "SedSangreDesbloqueada",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "SedSangreActiva",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "BarraSedSangre",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -475,15 +541,15 @@
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/resources/META-INF/mods.toml"
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
     ]
   },
   "foldersRoot": {
