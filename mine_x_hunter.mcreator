@@ -305,6 +305,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/minexhunter/world/inventory/SkillMenuMenu.java",
+          "src/main/java/net/mcreator/minexhunter/network/SkillMenuButtonMessage.java",
           "src/main/java/net/mcreator/minexhunter/client/gui/SkillMenuScreen.java"
         ]
       }
@@ -336,6 +337,98 @@
         ],
         "files": [
           "src/main/java/net/mcreator/minexhunter/procedures/RenkeyOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprarOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprar",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/BotonComprarMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprarInmunidadOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar_inmunidad_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarInmunidadOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BotonComprarInmunidad",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boton_comprar_inmunidad",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/BotonComprarInmunidadMessage.java"
         ]
       }
     }
@@ -470,7 +563,12 @@
       "item.mine_x_hunter.awakening_of_nen": "Awakening of Nen",
       "gui.mine_x_hunter.aura_nen_overlay.label_aura": "Aura:",
       "gui.mine_x_hunter.aura_nen_overlay.label_1": "1",
-      "key.mine_x_hunter.tenkey": "Ten"
+      "key.mine_x_hunter.tenkey": "Ten",
+      "key.mine_x_hunter.boton_comprar": "Boton Comprar",
+      "key.mine_x_hunter.boton_comprar_inmunidad": "Boton Comprar Inmunidad",
+      "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
+      "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
+      "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)"
     }
   },
   "metadata": {

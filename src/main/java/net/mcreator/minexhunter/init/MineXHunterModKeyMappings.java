@@ -16,7 +16,11 @@ import net.minecraft.client.KeyMapping;
 
 import net.mcreator.minexhunter.network.TenkeyMessage;
 import net.mcreator.minexhunter.network.RenkeyMessage;
+import net.mcreator.minexhunter.network.BotonComprarMessage;
+import net.mcreator.minexhunter.network.BotonComprarInmunidadMessage;
 import net.mcreator.minexhunter.MineXHunterMod;
+
+import com.mojang.blaze3d.platform.InputConstants;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MineXHunterModKeyMappings {
@@ -47,12 +51,40 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping BOTON_COMPRAR = new KeyMapping("key.mine_x_hunter.boton_comprar", InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_LEFT, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new BotonComprarMessage(0, 0));
+				BotonComprarMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
+	public static final KeyMapping BOTON_COMPRAR_INMUNIDAD = new KeyMapping("key.mine_x_hunter.boton_comprar_inmunidad", InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_LEFT, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new BotonComprarInmunidadMessage(0, 0));
+				BotonComprarInmunidadMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(TENKEY);
 		event.register(SKILL_MENU_ZOLDYICK_KEY);
 		event.register(RENKEY);
+		event.register(BOTON_COMPRAR);
+		event.register(BOTON_COMPRAR_INMUNIDAD);
 	}
 
 	@Mod.EventBusSubscriber(Dist.CLIENT)
@@ -62,6 +94,8 @@ public class MineXHunterModKeyMappings {
 			if (Minecraft.getInstance().screen == null) {
 				TENKEY.consumeClick();
 				RENKEY.consumeClick();
+				BOTON_COMPRAR.consumeClick();
+				BOTON_COMPRAR_INMUNIDAD.consumeClick();
 			}
 		}
 	}

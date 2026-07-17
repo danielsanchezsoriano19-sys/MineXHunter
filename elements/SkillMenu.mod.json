@@ -33,6 +33,9 @@
           "name": "button_comprar_garras_15_xp",
           "text": "Comprar Garras (15 XP)",
           "isUndecorated": false,
+          "onClick": {
+            "name": "BotonComprarOnKeyPressed"
+          },
           "width": 135,
           "height": 20,
           "x": 149,
@@ -46,6 +49,9 @@
           "name": "button_comprar_inmunidad_20_xp",
           "text": "Comprar Inmunidad (20 XP)",
           "isUndecorated": false,
+          "onClick": {
+            "name": "BotonComprarInmunidadOnKeyPressed"
+          },
           "width": 150,
           "height": 20,
           "x": 140,
