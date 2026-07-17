@@ -32,10 +32,12 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping SKILL_MENU_ZOLDYICK_KEY = new KeyMapping("key.mine_x_hunter.skill_menu_zoldyick_key", GLFW.GLFW_KEY_G, "key.categories.misc");
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(TENKEY);
+		event.register(SKILL_MENU_ZOLDYICK_KEY);
 	}
 
 	@Mod.EventBusSubscriber(Dist.CLIENT)

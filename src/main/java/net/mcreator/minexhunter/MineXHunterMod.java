@@ -18,6 +18,7 @@ import net.minecraft.server.TickTask;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.minexhunter.init.MineXHunterModMenus;
 import net.mcreator.minexhunter.init.MineXHunterModItems;
 
 import java.util.function.Supplier;
@@ -42,6 +43,7 @@ public class MineXHunterMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = context.getModEventBus();
 		MineXHunterModItems.REGISTRY.register(bus);
+		MineXHunterModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init
 		// End of user code block mod init
 	}

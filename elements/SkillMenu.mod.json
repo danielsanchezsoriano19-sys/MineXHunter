@@ -1,0 +1,65 @@
+{
+  "_fv": 85,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_habilidades_zoldyck",
+          "text": {
+            "fixedValue": "Habilidades Zoldyck"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 161,
+          "y": 45,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_comprar_garras_15_xp",
+          "text": "Comprar Garras (15 XP)",
+          "isUndecorated": false,
+          "width": 135,
+          "height": 20,
+          "x": 149,
+          "y": 78,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_comprar_inmunidad_20_xp",
+          "text": "Comprar Inmunidad (20 XP)",
+          "isUndecorated": false,
+          "width": 150,
+          "height": 20,
+          "x": 140,
+          "y": 129,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
