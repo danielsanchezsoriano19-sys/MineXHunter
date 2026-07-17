@@ -91,6 +91,8 @@ public class MineXHunterModVariables {
 					clone.medidor_dano_recibido = original.medidor_dano_recibido;
 					clone.vida_extra_entrenada = original.vida_extra_entrenada;
 					clone.vida_extra_maxima = original.vida_extra_maxima;
+					clone.NivelTen = original.NivelTen;
+					clone.XPTEN = original.XPTEN;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -142,6 +144,8 @@ public class MineXHunterModVariables {
 		public double medidor_dano_recibido = 0;
 		public double vida_extra_entrenada = 0;
 		public double vida_extra_maxima = 20.0;
+		public double NivelTen = 1.0;
+		public double XPTEN = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -158,6 +162,8 @@ public class MineXHunterModVariables {
 			nbt.putDouble("medidor_dano_recibido", medidor_dano_recibido);
 			nbt.putDouble("vida_extra_entrenada", vida_extra_entrenada);
 			nbt.putDouble("vida_extra_maxima", vida_extra_maxima);
+			nbt.putDouble("NivelTen", NivelTen);
+			nbt.putDouble("XPTEN", XPTEN);
 			return nbt;
 		}
 
@@ -175,6 +181,8 @@ public class MineXHunterModVariables {
 			medidor_dano_recibido = nbt.getDouble("medidor_dano_recibido");
 			vida_extra_entrenada = nbt.getDouble("vida_extra_entrenada");
 			vida_extra_maxima = nbt.getDouble("vida_extra_maxima");
+			NivelTen = nbt.getDouble("NivelTen");
+			XPTEN = nbt.getDouble("XPTEN");
 		}
 
 		public void markSyncDirty() {
@@ -209,6 +217,8 @@ public class MineXHunterModVariables {
 						cap.medidor_dano_recibido = message.data().medidor_dano_recibido;
 						cap.vida_extra_entrenada = message.data().vida_extra_entrenada;
 						cap.vida_extra_maxima = message.data().vida_extra_maxima;
+						cap.NivelTen = message.data().NivelTen;
+						cap.XPTEN = message.data().XPTEN;
 					});
 			});
 			context.setPacketHandled(true);

@@ -180,6 +180,24 @@
           "src/main/java/net/mcreator/minexhunter/network/TenkeyMessage.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoTen",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_ten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoTenProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -254,6 +272,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "20.0"
+    },
+    {
+      "name": "NivelTen",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "XPTEN",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
