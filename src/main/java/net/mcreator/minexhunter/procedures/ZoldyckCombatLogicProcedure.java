@@ -13,7 +13,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.minexhunter.network.MineXHunterModVariables;
@@ -42,8 +41,7 @@ public class ZoldyckCombatLogicProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2, 4, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.DAMAGE_INDICATOR, x, y, z, 5, 3, 3, 3, 1);
+			world.addParticle(ParticleTypes.DAMAGE_INDICATOR, x, y, z, 0, 1, 0);
 			if (sourceentity instanceof Player _player)
 				_player.getFoodData().setFoodLevel((int) ((sourceentity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 1.5));
 		}

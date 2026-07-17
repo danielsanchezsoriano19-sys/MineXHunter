@@ -623,6 +623,44 @@
           "src/main/java/net/mcreator/minexhunter/procedures/RefillNenProcedureProcedure.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoZoldyck",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_zoldyck",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoZoldyckProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -769,6 +807,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "Ninguno"
+    },
+    {
+      "name": "zoldyck_training",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
