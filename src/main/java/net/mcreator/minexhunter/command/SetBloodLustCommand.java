@@ -19,7 +19,7 @@ import net.mcreator.minexhunter.procedures.ComandobloodlustProcedure;
 public class SetBloodLustCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("mxh setunlockedbloodlust").requires(s -> s.hasPermission(2)).executes(arguments -> {
+		event.getDispatcher().register(Commands.literal("setunlockedbloodlust").requires(s -> s.hasPermission(2)).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();
