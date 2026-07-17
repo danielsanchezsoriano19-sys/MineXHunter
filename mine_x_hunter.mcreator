@@ -182,28 +182,6 @@
       }
     },
     {
-      "name": "EchoRhythmOnInitialEntitySpawn",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "echo_rhythm_on_initial_entity_spawn",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/EchoRhythmOnInitialEntitySpawnProcedure.java"
-        ]
-      }
-    },
-    {
       "name": "EntrenamientoTen",
       "type": "procedure",
       "compiles": true,
