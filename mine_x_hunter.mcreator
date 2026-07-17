@@ -202,6 +202,24 @@
           "src/main/java/net/mcreator/minexhunter/procedures/EchoRhythmOnInitialEntitySpawnProcedure.java"
         ]
       }
+    },
+    {
+      "name": "EntrenamientoTen",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entrenamiento_ten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoTenProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -290,15 +308,21 @@
       "value": "false"
     },
     {
-      "name": "claws_active",
-      "type": "logic",
+      "name": "rhythm_cooldown",
+      "type": "number",
       "scope": "player_persistent",
-      "value": "false"
+      "value": "0"
     },
     {
       "name": "unlocked_rhythm",
       "type": "logic",
       "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "claws_active",
+      "type": "logic",
+      "scope": "player_persistent",
       "value": "false"
     },
     {
@@ -308,10 +332,16 @@
       "value": "false"
     },
     {
-      "name": "rhythm_cooldown",
+      "name": "XPTEN",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "NivelTen",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
     }
   ],
   "sound_elements": [],
@@ -329,10 +359,10 @@
     "files": [
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/resources/META-INF/mods.toml"
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
     ]
   },
   "foldersRoot": {

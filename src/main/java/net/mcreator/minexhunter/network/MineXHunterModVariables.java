@@ -99,9 +99,11 @@ public class MineXHunterModVariables {
 					clone.vida_extra_maxima = original.vida_extra_maxima;
 					clone.zoldyck_clan = original.zoldyck_clan;
 					clone.unlocked_claws = original.unlocked_claws;
+					clone.rhythm_cooldown = original.rhythm_cooldown;
 					clone.claws_active = original.claws_active;
 					clone.rhythm_active = original.rhythm_active;
-					clone.rhythm_cooldown = original.rhythm_cooldown;
+					clone.XPTEN = original.XPTEN;
+					clone.NivelTen = original.NivelTen;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -307,9 +309,11 @@ public class MineXHunterModVariables {
 		public double vida_extra_maxima = 20.0;
 		public boolean zoldyck_clan = false;
 		public boolean unlocked_claws = false;
+		public double rhythm_cooldown = 0;
 		public boolean claws_active = false;
 		public boolean rhythm_active = false;
-		public double rhythm_cooldown = 0;
+		public double XPTEN = 0;
+		public double NivelTen = 1.0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -328,9 +332,11 @@ public class MineXHunterModVariables {
 			nbt.putDouble("vida_extra_maxima", vida_extra_maxima);
 			nbt.putBoolean("zoldyck_clan", zoldyck_clan);
 			nbt.putBoolean("unlocked_claws", unlocked_claws);
+			nbt.putDouble("rhythm_cooldown", rhythm_cooldown);
 			nbt.putBoolean("claws_active", claws_active);
 			nbt.putBoolean("rhythm_active", rhythm_active);
-			nbt.putDouble("rhythm_cooldown", rhythm_cooldown);
+			nbt.putDouble("XPTEN", XPTEN);
+			nbt.putDouble("NivelTen", NivelTen);
 			return nbt;
 		}
 
@@ -350,9 +356,11 @@ public class MineXHunterModVariables {
 			vida_extra_maxima = nbt.getDouble("vida_extra_maxima");
 			zoldyck_clan = nbt.getBoolean("zoldyck_clan");
 			unlocked_claws = nbt.getBoolean("unlocked_claws");
+			rhythm_cooldown = nbt.getDouble("rhythm_cooldown");
 			claws_active = nbt.getBoolean("claws_active");
 			rhythm_active = nbt.getBoolean("rhythm_active");
-			rhythm_cooldown = nbt.getDouble("rhythm_cooldown");
+			XPTEN = nbt.getDouble("XPTEN");
+			NivelTen = nbt.getDouble("NivelTen");
 		}
 
 		public void markSyncDirty() {
@@ -389,9 +397,11 @@ public class MineXHunterModVariables {
 						cap.vida_extra_maxima = message.data().vida_extra_maxima;
 						cap.zoldyck_clan = message.data().zoldyck_clan;
 						cap.unlocked_claws = message.data().unlocked_claws;
+						cap.rhythm_cooldown = message.data().rhythm_cooldown;
 						cap.claws_active = message.data().claws_active;
 						cap.rhythm_active = message.data().rhythm_active;
-						cap.rhythm_cooldown = message.data().rhythm_cooldown;
+						cap.XPTEN = message.data().XPTEN;
+						cap.NivelTen = message.data().NivelTen;
 					});
 			});
 			context.setPacketHandled(true);

@@ -60,7 +60,8 @@ public class AuraRegenerationProcedure {
 				&& entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TenActive) {
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
-					capability.aura_actual = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).aura_actual - 0.02;
+					capability.aura_actual = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).aura_actual
+							- 0.02 / entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelTen;
 					capability.markSyncDirty();
 				});
 			}
@@ -68,6 +69,12 @@ public class AuraRegenerationProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 1, false, false));
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.END_ROD, (x + entity.getLookAngle().x), (y + 1), (z + entity.getLookAngle().z), 2, 0.3, 0.4, 0.3, 0);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.XPTEN = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).XPTEN + 1;
+					capability.markSyncDirty();
+				});
+			}
 			if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).aura_actual <= 0) {
 				{
 					entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
@@ -76,7 +83,19 @@ public class AuraRegenerationProcedure {
 					});
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("You have run out of aura! "), false);
+					_player.displayClientMessage(Component.literal("You have run out of aura! "), true);
+			}
+			if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).XPTEN >= 2400
+					&& entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelTen < 5) {
+				{
+					entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+						capability.NivelTen = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelTen + 1;
+						capability.XPTEN = 0;
+						capability.markSyncDirty();
+					});
+				}
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("Your control over Ten has leveled up!"), true);
 			}
 		}
 	}
