@@ -1,17 +1,6 @@
 package net.mcreator.minexhunter.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
-
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.Component;
-
-import net.mcreator.minexhunter.network.MineXHunterModVariables;
-
-import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class EntrenamientoSedSangreProcedure {
@@ -44,7 +33,7 @@ public class EntrenamientoSedSangreProcedure {
 			}
 		}
 		if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).BarraSedSangre >= 500
-				&& !(entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).SedSangreDesbloqueada == false)) {
+				&& !entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).SedSangreDesbloqueada) {
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
 					capability.SedSangreDesbloqueada = true;

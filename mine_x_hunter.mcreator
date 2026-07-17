@@ -325,7 +325,7 @@
     {
       "name": "RenkeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "renkey_on_key_pressed",
       "metadata": {
@@ -423,7 +423,7 @@
     {
       "name": "BotonComprarInmunidad",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar_inmunidad",
       "metadata": {
@@ -435,7 +435,7 @@
     {
       "name": "ToggleClawsKeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "toggle_claws_key_on_key_pressed",
       "metadata": {
@@ -481,7 +481,7 @@
     {
       "name": "ZoldyckCombatLogic",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "zoldyck_combat_logic",
       "metadata": {
@@ -533,7 +533,7 @@
     {
       "name": "SetBloodLust",
       "type": "command",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_blood_lust",
       "metadata": {
@@ -715,7 +715,6 @@
       "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
       "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
       "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",
-      "key.mine_x_hunter.toggle_claws_key": "Toggle Claws Key",
       "item.mine_x_hunter.contrato_sangre_zoldyck": "Contrato Sangre Zoldyck",
       "key.mine_x_hunter.skill_menu_zoldyick_key": "Skill Menu Zoldyick Key",
       "key.mine_x_hunter.renkey": "Ren"
