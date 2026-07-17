@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.mcreator.minexhunter.network.TenkeyMessage;
+import net.mcreator.minexhunter.network.RenkeyMessage;
 import net.mcreator.minexhunter.MineXHunterMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -32,10 +33,24 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping RENKEY = new KeyMapping("key.mine_x_hunter.renkey", GLFW.GLFW_KEY_B, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new RenkeyMessage(0, 0));
+				RenkeyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(TENKEY);
+		event.register(RENKEY);
 	}
 
 	@Mod.EventBusSubscriber(Dist.CLIENT)
@@ -44,6 +59,7 @@ public class MineXHunterModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				TENKEY.consumeClick();
+				RENKEY.consumeClick();
 			}
 		}
 	}
