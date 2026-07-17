@@ -325,7 +325,7 @@
     {
       "name": "RenkeyOnKeyPressed",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "renkey_on_key_pressed",
       "metadata": {
@@ -423,7 +423,7 @@
     {
       "name": "BotonComprarInmunidad",
       "type": "keybind",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "boton_comprar_inmunidad",
       "metadata": {
@@ -435,7 +435,7 @@
     {
       "name": "ToggleClawsKeyOnKeyPressed",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "toggle_claws_key_on_key_pressed",
       "metadata": {
@@ -481,7 +481,7 @@
     {
       "name": "ZoldyckCombatLogic",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "zoldyck_combat_logic",
       "metadata": {
@@ -533,7 +533,7 @@
     {
       "name": "SetBloodLust",
       "type": "command",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "set_blood_lust",
       "metadata": {
@@ -545,7 +545,7 @@
     {
       "name": "EntrenamientoSedSangre",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "entrenamiento_sed_sangre",
       "metadata": {
@@ -722,15 +722,15 @@
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/resources/META-INF/mods.toml"
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
     ]
   },
   "foldersRoot": {
