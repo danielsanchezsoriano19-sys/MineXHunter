@@ -5,6 +5,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,6 +20,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.mcreator.minexhunter.network.MineXHunterModVariables;
 
 import javax.annotation.Nullable;
+
+import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class AuraRegenerationProcedure {
@@ -135,6 +139,15 @@ public class AuraRegenerationProcedure {
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("Your control over Ren has leveled up!"), true);
+			}
+			if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).SedSangreActiva == true) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 3, false, false));
+					}
+				}
 			}
 		}
 	}

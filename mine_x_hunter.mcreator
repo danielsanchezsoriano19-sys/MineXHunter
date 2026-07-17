@@ -499,6 +499,54 @@
           "src/main/java/net/mcreator/minexhunter/procedures/ZoldyckCombatLogicProcedure.java"
         ]
       }
+    },
+    {
+      "name": "Comandobloodlust",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "comandobloodlust",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ComandobloodlustProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SetBloodLust",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_blood_lust",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/SetBloodLustCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "EntrenamientoSedSangre",
+      "type": "procedure",
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "entrenamiento_sed_sangre",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoSedSangreProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -621,6 +669,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "SedSangreActiva",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "BarraSedSangre",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "SedSangreDesbloqueada",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
