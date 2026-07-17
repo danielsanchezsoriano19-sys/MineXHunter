@@ -759,6 +759,12 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "TipoHatsu",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Ninguno"
     }
   ],
   "sound_elements": [],
