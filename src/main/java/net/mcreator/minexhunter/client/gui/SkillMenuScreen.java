@@ -1,19 +1,5 @@
 package net.mcreator.minexhunter.client.gui;
 
-import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.GuiGraphics;
-
-import net.mcreator.minexhunter.world.inventory.SkillMenuMenu;
-import net.mcreator.minexhunter.init.MineXHunterModScreens;
-
-import com.mojang.blaze3d.systems.RenderSystem;
-
 public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> implements MineXHunterModScreens.ScreenAccessor {
 	private final Level world;
 	private final int x, y, z;

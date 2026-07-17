@@ -200,44 +200,6 @@
       }
     },
     {
-      "name": "ContratoSangreZoldyckRightclicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "contrato_sangre_zoldyck_rightclicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/ContratoSangreZoldyckRightclickedProcedure.java"
-        ]
-      }
-    },
-    {
       "name": "ContratoSangreZoldyck",
       "type": "item",
       "compiles": true,
@@ -247,18 +209,6 @@
         "files": [
           "src/main/java/net/mcreator/minexhunter/item/ContratoSangreZoldyckItem.java",
           "src/main/resources/assets/mine_x_hunter/models/item/contrato_sangre_zoldyck.json"
-        ]
-      }
-    },
-    {
-      "name": "SkillMenuZoldyickKey",
-      "type": "keybind",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "skill_menu_zoldyick_key",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/network/SkillMenuZoldyickKeyMessage.java"
         ]
       }
     },
@@ -297,6 +247,56 @@
       }
     },
     {
+      "name": "SkillMenuZoldyickKey",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "skill_menu_zoldyick_key",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/SkillMenuZoldyickKeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "ContratoSangreZoldyckRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "contrato_sangre_zoldyck_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ContratoSangreZoldyckRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
       "name": "SkillMenu",
       "type": "gui",
       "compiles": true,
@@ -306,6 +306,36 @@
         "files": [
           "src/main/java/net/mcreator/minexhunter/world/inventory/SkillMenuMenu.java",
           "src/main/java/net/mcreator/minexhunter/client/gui/SkillMenuScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "Renkey",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "renkey",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/RenkeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "RenkeyOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "renkey_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/RenkeyOnKeyPressedProcedure.java"
         ]
       }
     }
@@ -418,6 +448,18 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "NivelRen",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "XPREN",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -428,19 +470,11 @@
       "item.mine_x_hunter.awakening_of_nen": "Awakening of Nen",
       "gui.mine_x_hunter.aura_nen_overlay.label_aura": "Aura:",
       "gui.mine_x_hunter.aura_nen_overlay.label_1": "1",
-      "key.mine_x_hunter.tenkey": "Ten",
-      "item.mine_x_hunter.contrato_sangre_zoldyck": "Contrato Sangre Zoldyck",
-      "key.mine_x_hunter.skill_menu_zoldyick_key": "Skill Menu Zoldyick Key",
-      "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
-      "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
-      "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)"
+      "key.mine_x_hunter.tenkey": "Ten"
     }
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
-      "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
       "src/main/resources/pack.mcmeta",

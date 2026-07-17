@@ -102,6 +102,8 @@ public class MineXHunterModVariables {
 					clone.XPTEN = original.XPTEN;
 					clone.NivelTen = original.NivelTen;
 					clone.unlocked_inmunity = original.unlocked_inmunity;
+					clone.NivelRen = original.NivelRen;
+					clone.XPREN = original.XPREN;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -310,6 +312,8 @@ public class MineXHunterModVariables {
 		public double XPTEN = 0;
 		public double NivelTen = 1.0;
 		public boolean unlocked_inmunity = false;
+		public double NivelRen = 0;
+		public double XPREN = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -331,6 +335,8 @@ public class MineXHunterModVariables {
 			nbt.putDouble("XPTEN", XPTEN);
 			nbt.putDouble("NivelTen", NivelTen);
 			nbt.putBoolean("unlocked_inmunity", unlocked_inmunity);
+			nbt.putDouble("NivelRen", NivelRen);
+			nbt.putDouble("XPREN", XPREN);
 			return nbt;
 		}
 
@@ -353,6 +359,8 @@ public class MineXHunterModVariables {
 			XPTEN = nbt.getDouble("XPTEN");
 			NivelTen = nbt.getDouble("NivelTen");
 			unlocked_inmunity = nbt.getBoolean("unlocked_inmunity");
+			NivelRen = nbt.getDouble("NivelRen");
+			XPREN = nbt.getDouble("XPREN");
 		}
 
 		public void markSyncDirty() {
@@ -392,6 +400,8 @@ public class MineXHunterModVariables {
 						cap.XPTEN = message.data().XPTEN;
 						cap.NivelTen = message.data().NivelTen;
 						cap.unlocked_inmunity = message.data().unlocked_inmunity;
+						cap.NivelRen = message.data().NivelRen;
+						cap.XPREN = message.data().XPREN;
 					});
 			});
 			context.setPacketHandled(true);

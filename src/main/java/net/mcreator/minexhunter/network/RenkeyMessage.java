@@ -3,26 +3,26 @@ package net.mcreator.minexhunter.network;
 import net.mcreator.minexhunter.MineXHunterMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class SkillMenuZoldyickKeyMessage {
+public class RenkeyMessage {
 
 	int type, pressedms;
 
-	public SkillMenuZoldyickKeyMessage(int type, int pressedms) {
+	public RenkeyMessage(int type, int pressedms) {
 		this.type = type;
 		this.pressedms = pressedms;
 	}
 
-	public SkillMenuZoldyickKeyMessage(FriendlyByteBuf buffer) {
+	public RenkeyMessage(FriendlyByteBuf buffer) {
 		this.type = buffer.readInt();
 		this.pressedms = buffer.readInt();
 	}
 
-	public static void buffer(SkillMenuZoldyickKeyMessage message, FriendlyByteBuf buffer) {
+	public static void buffer(RenkeyMessage message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.type);
 		buffer.writeInt(message.pressedms);
 	}
 
-	public static void handler(SkillMenuZoldyickKeyMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+	public static void handler(RenkeyMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 		NetworkEvent.Context context = contextSupplier.get();
 		context.enqueueWork(() -> {
 		});
@@ -31,7 +31,7 @@ public class SkillMenuZoldyickKeyMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		MineXHunterMod.addNetworkMessage(SkillMenuZoldyickKeyMessage.class, SkillMenuZoldyickKeyMessage::buffer, SkillMenuZoldyickKeyMessage::new, SkillMenuZoldyickKeyMessage::handler);
+		MineXHunterMod.addNetworkMessage(RenkeyMessage.class, RenkeyMessage::buffer, RenkeyMessage::new, RenkeyMessage::handler);
 	}
 
 }

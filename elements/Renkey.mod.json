@@ -1,0 +1,12 @@
+{
+  "_fv": 85,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "B",
+    "keyBindingName": "Ren",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "RenkeyOnKeyPressed"
+    }
+  }
+}
