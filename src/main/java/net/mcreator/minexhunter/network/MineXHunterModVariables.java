@@ -17,9 +17,14 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.CompoundTag;
@@ -34,6 +39,7 @@ import java.util.function.Supplier;
 public class MineXHunterModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
+		MineXHunterMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handleData);
 		MineXHunterMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handleData);
 	}
 
@@ -93,14 +99,167 @@ public class MineXHunterModVariables {
 					clone.vida_extra_maxima = original.vida_extra_maxima;
 					clone.zoldyck_clan = original.zoldyck_clan;
 					clone.unlocked_claws = original.unlocked_claws;
+					clone.rhythm_cooldown = original.rhythm_cooldown;
 					clone.claws_active = original.claws_active;
+					clone.rhythm_active = original.rhythm_active;
 					clone.XPTEN = original.XPTEN;
 					clone.NivelTen = original.NivelTen;
-					clone.unlocked_inmunity = original.unlocked_inmunity;
 					if (!event.isWasDeath()) {
 					}
 				});
 			});
+		}
+
+		@SubscribeEvent
+		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+			if (event.getEntity() instanceof ServerPlayer player) {
+				SavedData mapdata = MapVariables.get(player.level());
+				SavedData worlddata = WorldVariables.get(player.level());
+				if (mapdata != null)
+					MineXHunterMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new SavedDataSyncMessage(0, mapdata));
+				if (worlddata != null)
+					MineXHunterMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+			if (event.getEntity() instanceof ServerPlayer player) {
+				SavedData worlddata = WorldVariables.get(player.level());
+				if (worlddata != null)
+					MineXHunterMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onWorldTick(TickEvent.LevelTickEvent event) {
+			if (event.phase == TickEvent.Phase.END && event.level instanceof ServerLevel level) {
+				WorldVariables worldVariables = WorldVariables.get(level);
+				if (worldVariables._syncDirty) {
+					MineXHunterMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, worldVariables));
+					worldVariables._syncDirty = false;
+				}
+				MapVariables mapVariables = MapVariables.get(level);
+				if (mapVariables._syncDirty) {
+					MineXHunterMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, mapVariables));
+					mapVariables._syncDirty = false;
+				}
+			}
+		}
+	}
+
+	public static class WorldVariables extends SavedData {
+		public static final String DATA_NAME = "mine_x_hunter_worldvars";
+		boolean _syncDirty = false;
+
+		public static WorldVariables load(CompoundTag tag) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			return nbt;
+		}
+
+		public void markSyncDirty() {
+			this.setDirty();
+			this._syncDirty = true;
+		}
+
+		static WorldVariables clientSide = new WorldVariables();
+
+		public static WorldVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevel level) {
+				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends SavedData {
+		public static final String DATA_NAME = "mine_x_hunter_mapvars";
+		boolean _syncDirty = false;
+		public boolean unlocked_rhythm = false;
+
+		public static MapVariables load(CompoundTag tag) {
+			MapVariables data = new MapVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+			unlocked_rhythm = nbt.getBoolean("unlocked_rhythm");
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			nbt.putBoolean("unlocked_rhythm", unlocked_rhythm);
+			return nbt;
+		}
+
+		public void markSyncDirty() {
+			this.setDirty();
+			_syncDirty = true;
+		}
+
+		static MapVariables clientSide = new MapVariables();
+
+		public static MapVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class SavedDataSyncMessage {
+		private final int dataType;
+		private final SavedData data;
+
+		public SavedDataSyncMessage(int dataType, SavedData data) {
+			this.dataType = dataType;
+			this.data = data;
+		}
+
+		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
+			int dataType = buffer.readInt();
+			CompoundTag nbt = buffer.readNbt();
+			SavedData data = null;
+			if (nbt != null) {
+				data = dataType == 0 ? new MapVariables() : new WorldVariables();
+				if (data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
+			this.dataType = dataType;
+			this.data = data;
+		}
+
+		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
+			buffer.writeInt(message.dataType);
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag()));
+		}
+
+		public static void handleData(final SavedDataSyncMessage message, final Supplier<NetworkEvent.Context> contextSupplier) {
+			NetworkEvent.Context context = contextSupplier.get();
+			context.enqueueWork(() -> {
+				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
+					if (message.dataType == 0)
+						MapVariables.clientSide.read(message.data.save(new CompoundTag()));
+					else
+						WorldVariables.clientSide.read(message.data.save(new CompoundTag()));
+				}
+			});
+			context.setPacketHandled(true);
 		}
 	}
 
@@ -150,10 +309,11 @@ public class MineXHunterModVariables {
 		public double vida_extra_maxima = 20.0;
 		public boolean zoldyck_clan = false;
 		public boolean unlocked_claws = false;
+		public double rhythm_cooldown = 0;
 		public boolean claws_active = false;
+		public boolean rhythm_active = false;
 		public double XPTEN = 0;
 		public double NivelTen = 1.0;
-		public boolean unlocked_inmunity = false;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -172,10 +332,11 @@ public class MineXHunterModVariables {
 			nbt.putDouble("vida_extra_maxima", vida_extra_maxima);
 			nbt.putBoolean("zoldyck_clan", zoldyck_clan);
 			nbt.putBoolean("unlocked_claws", unlocked_claws);
+			nbt.putDouble("rhythm_cooldown", rhythm_cooldown);
 			nbt.putBoolean("claws_active", claws_active);
+			nbt.putBoolean("rhythm_active", rhythm_active);
 			nbt.putDouble("XPTEN", XPTEN);
 			nbt.putDouble("NivelTen", NivelTen);
-			nbt.putBoolean("unlocked_inmunity", unlocked_inmunity);
 			return nbt;
 		}
 
@@ -195,10 +356,11 @@ public class MineXHunterModVariables {
 			vida_extra_maxima = nbt.getDouble("vida_extra_maxima");
 			zoldyck_clan = nbt.getBoolean("zoldyck_clan");
 			unlocked_claws = nbt.getBoolean("unlocked_claws");
+			rhythm_cooldown = nbt.getDouble("rhythm_cooldown");
 			claws_active = nbt.getBoolean("claws_active");
+			rhythm_active = nbt.getBoolean("rhythm_active");
 			XPTEN = nbt.getDouble("XPTEN");
 			NivelTen = nbt.getDouble("NivelTen");
-			unlocked_inmunity = nbt.getBoolean("unlocked_inmunity");
 		}
 
 		public void markSyncDirty() {
@@ -235,10 +397,11 @@ public class MineXHunterModVariables {
 						cap.vida_extra_maxima = message.data().vida_extra_maxima;
 						cap.zoldyck_clan = message.data().zoldyck_clan;
 						cap.unlocked_claws = message.data().unlocked_claws;
+						cap.rhythm_cooldown = message.data().rhythm_cooldown;
 						cap.claws_active = message.data().claws_active;
+						cap.rhythm_active = message.data().rhythm_active;
 						cap.XPTEN = message.data().XPTEN;
 						cap.NivelTen = message.data().NivelTen;
-						cap.unlocked_inmunity = message.data().unlocked_inmunity;
 					});
 			});
 			context.setPacketHandled(true);
