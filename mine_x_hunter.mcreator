@@ -184,7 +184,7 @@
     {
       "name": "EntrenamientoTen",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "entrenamiento_ten",
       "metadata": {
@@ -286,25 +286,7 @@
       "value": "false"
     },
     {
-      "name": "rhythm_cooldown",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "unlocked_rhythm",
-      "type": "logic",
-      "scope": "map",
-      "value": "false"
-    },
-    {
       "name": "claws_active",
-      "type": "logic",
-      "scope": "player_persistent",
-      "value": "false"
-    },
-    {
-      "name": "rhythm_active",
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
@@ -320,6 +302,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "1.0"
+    },
+    {
+      "name": "unlocked_inmunity",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [],
