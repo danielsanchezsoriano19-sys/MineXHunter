@@ -108,8 +108,9 @@ public class AuraRegenerationProcedure {
 				_level.sendParticles(ParticleTypes.CRIT, (x + entity.getLookAngle().x), (y + 1), (z + entity.getLookAngle().z), 5, 0.3, 0.4, 0.3, 0);
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.XPREN = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).XPREN + 1;
 					capability.aura_actual = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).aura_actual
-							- 0.08 / entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelTen;
+							- 0.08 / entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelRen;
 					capability.markSyncDirty();
 				});
 			}
@@ -122,6 +123,18 @@ public class AuraRegenerationProcedure {
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("You have run out of aura!"), true);
+			}
+			if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).XPREN >= 3600
+					&& entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelRen < 5) {
+				{
+					entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+						capability.NivelRen = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).NivelRen + 1;
+						capability.XPREN = 0;
+						capability.markSyncDirty();
+					});
+				}
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("Your control over Ren has leveled up!"), true);
 			}
 		}
 	}
