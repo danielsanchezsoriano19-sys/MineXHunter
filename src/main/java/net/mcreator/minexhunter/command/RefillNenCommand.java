@@ -13,13 +13,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
-import net.mcreator.minexhunter.procedures.ComandobloodlustProcedure;
+import net.mcreator.minexhunter.procedures.RefillNenProcedureProcedure;
 
 @Mod.EventBusSubscriber
-public class SetBloodLustCommand {
+public class RefillNenCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("setunlockbloodlust").requires(s -> s.hasPermission(2)).executes(arguments -> {
+		event.getDispatcher().register(Commands.literal("refill_nen").requires(s -> s.hasPermission(2)).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
 			double y = arguments.getSource().getPosition().y();
@@ -31,7 +31,7 @@ public class SetBloodLustCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			ComandobloodlustProcedure.execute(entity);
+			RefillNenProcedureProcedure.execute(entity);
 			return 0;
 		}));
 	}

@@ -1,0 +1,12 @@
+{
+  "_fv": 85,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "F",
+    "keyBindingName": "Blood Lust",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "BloodLustKeyOnKeyPressed"
+    }
+  }
+}
