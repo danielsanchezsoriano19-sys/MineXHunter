@@ -202,7 +202,7 @@
     {
       "name": "ContratoSangreZoldyck",
       "type": "item",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "contrato_sangre_zoldyck",
       "metadata": {
@@ -249,7 +249,7 @@
     {
       "name": "SkillMenuZoldyickKey",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "skill_menu_zoldyick_key",
       "metadata": {
@@ -312,7 +312,7 @@
     {
       "name": "Renkey",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "renkey",
       "metadata": {
@@ -324,7 +324,7 @@
     {
       "name": "RenkeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "renkey_on_key_pressed",
       "metadata": {
@@ -342,7 +342,7 @@
     {
       "name": "Comandobloodlust",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "comandobloodlust",
       "metadata": {
@@ -360,7 +360,7 @@
     {
       "name": "SetBloodLust",
       "type": "command",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_blood_lust",
       "metadata": {
@@ -372,7 +372,7 @@
     {
       "name": "EntrenamientoSedSangre",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "entrenamiento_sed_sangre",
       "metadata": {
@@ -390,7 +390,7 @@
     {
       "name": "BotonComprar",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar",
       "metadata": {
@@ -402,7 +402,7 @@
     {
       "name": "BotonComprarOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar_on_key_pressed",
       "metadata": {
@@ -436,7 +436,7 @@
     {
       "name": "BotonComprarInmunidad",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar_inmunidad",
       "metadata": {
@@ -448,7 +448,7 @@
     {
       "name": "BotonComprarInmunidadOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar_inmunidad_on_key_pressed",
       "metadata": {
@@ -476,6 +476,74 @@
         ],
         "files": [
           "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarInmunidadOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ToggleClawsKeyOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_claws_key_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ToggleClawsKeyOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ToggleClawsKey",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_claws_key",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/ToggleClawsKeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "ZoldyckCombatLogic",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "zoldyck_combat_logic",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ZoldyckCombatLogicProcedure.java"
         ]
       }
     }
@@ -631,7 +699,9 @@
       "key.mine_x_hunter.tenkey": "Ten",
       "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
       "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
-      "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)"
+      "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",
+      "key.mine_x_hunter.boton_comprar": "Boton Comprar",
+      "key.mine_x_hunter.boton_comprar_inmunidad": "Boton Comprar Inmunidad"
     }
   },
   "metadata": {
