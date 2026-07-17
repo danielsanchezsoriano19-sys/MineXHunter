@@ -325,7 +325,7 @@
     {
       "name": "RenkeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "renkey_on_key_pressed",
       "metadata": {
@@ -423,7 +423,7 @@
     {
       "name": "BotonComprarInmunidad",
       "type": "keybind",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "boton_comprar_inmunidad",
       "metadata": {
@@ -435,7 +435,7 @@
     {
       "name": "ToggleClawsKeyOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "toggle_claws_key_on_key_pressed",
       "metadata": {
@@ -481,7 +481,7 @@
     {
       "name": "ZoldyckCombatLogic",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "zoldyck_combat_logic",
       "metadata": {
@@ -533,7 +533,7 @@
     {
       "name": "SetBloodLust",
       "type": "command",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "set_blood_lust",
       "metadata": {
@@ -545,7 +545,7 @@
     {
       "name": "EntrenamientoSedSangre",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "entrenamiento_sed_sangre",
       "metadata": {
