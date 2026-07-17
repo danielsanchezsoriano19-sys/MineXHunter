@@ -315,7 +315,7 @@ public class MineXHunterModVariables {
 		public double XPTEN = 0;
 		public double NivelTen = 1.0;
 		public boolean unlocked_inmunity = false;
-		public double NivelRen = 0;
+		public double NivelRen = 1.0;
 		public double XPREN = 0;
 		public boolean SedSangreActiva = false;
 		public double BarraSedSangre = 0;

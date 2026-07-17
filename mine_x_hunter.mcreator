@@ -559,6 +559,66 @@
           "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoSedSangreProcedure.java"
         ]
       }
+    },
+    {
+      "name": "BloodLustKeyOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood_lust_key_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BloodLustKeyOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BloodLustKey",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood_lust_key",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/BloodLustKeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "RefillNen",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "refill_nen",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/RefillNenCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "RefillNenProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "refill_nen_procedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/RefillNenProcedureProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -674,7 +734,7 @@
       "name": "NivelRen",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
+      "value": "1.0"
     },
     {
       "name": "XPREN",
@@ -717,7 +777,8 @@
       "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",
       "item.mine_x_hunter.contrato_sangre_zoldyck": "Contrato Sangre Zoldyck",
       "key.mine_x_hunter.skill_menu_zoldyick_key": "Skill Menu Zoldyick Key",
-      "key.mine_x_hunter.renkey": "Ren"
+      "key.mine_x_hunter.renkey": "Ren",
+      "key.mine_x_hunter.blood_lust_key": "Blood Lust"
     }
   },
   "metadata": {
