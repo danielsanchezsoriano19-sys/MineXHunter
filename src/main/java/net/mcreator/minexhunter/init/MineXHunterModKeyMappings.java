@@ -14,11 +14,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
-import net.mcreator.minexhunter.network.ToggleClawsKeyMessage;
-import net.mcreator.minexhunter.network.TenkeyMessage;
-import net.mcreator.minexhunter.network.RenkeyMessage;
-import net.mcreator.minexhunter.network.BotonComprarMessage;
-import net.mcreator.minexhunter.network.BotonComprarInmunidadMessage;
+import net.mcreator.minexhunter.network.*;
 import net.mcreator.minexhunter.MineXHunterMod;
 
 import com.mojang.blaze3d.platform.InputConstants;
@@ -38,7 +34,19 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping SKILL_MENU_ZOLDYICK_KEY = new KeyMapping("key.mine_x_hunter.skill_menu_zoldyick_key", GLFW.GLFW_KEY_G, "key.categories.misc");
+	public static final KeyMapping SKILL_MENU_ZOLDYICK_KEY = new KeyMapping("key.mine_x_hunter.skill_menu_zoldyick_key", GLFW.GLFW_KEY_G, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new SkillMenuZoldyickKeyMessage(0, 0));
+				SkillMenuZoldyickKeyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	public static final KeyMapping RENKEY = new KeyMapping("key.mine_x_hunter.renkey", GLFW.GLFW_KEY_B, "key.categories.misc") {
 		private boolean isDownOld = false;
 
@@ -108,6 +116,7 @@ public class MineXHunterModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				TENKEY.consumeClick();
+				SKILL_MENU_ZOLDYICK_KEY.consumeClick();
 				RENKEY.consumeClick();
 				BOTON_COMPRAR.consumeClick();
 				BOTON_COMPRAR_INMUNIDAD.consumeClick();
