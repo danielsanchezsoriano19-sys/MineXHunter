@@ -17,5 +17,6 @@
   "gui.mine_x_hunter.skill_menu.label_recibir_100_golpes_de_veneno_o_r": "Recibir 100 golpes de veneno o rayo",
   "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: ",
   "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)",
-  "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)"
+  "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)",
+  "key.mine_x_hunter.shadow_step": "Shadow Step"
 }
