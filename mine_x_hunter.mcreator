@@ -679,6 +679,40 @@
       }
     },
     {
+      "name": "BloodlustVSten",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bloodlust_v_sten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BloodlustVStenProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ShadowStep",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_step",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/ShadowStepMessage.java"
+        ]
+      }
+    },
+    {
       "name": "ShadowStepOnKeyPressed",
       "type": "procedure",
       "compiles": true,
@@ -713,14 +747,36 @@
       }
     },
     {
-      "name": "ShadowStep",
-      "type": "keybind",
+      "name": "ComprarPasodeSombra",
+      "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shadow_step",
+      "registry_name": "comprar_pasode_sombra",
       "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
         "files": [
-          "src/main/java/net/mcreator/minexhunter/network/ShadowStepMessage.java"
+          "src/main/java/net/mcreator/minexhunter/procedures/ComprarPasodeSombraProcedure.java"
         ]
       }
     },
@@ -755,40 +811,6 @@
         ],
         "files": [
           "src/main/java/net/mcreator/minexhunter/procedures/ShadowStepPassiveProcedure.java"
-        ]
-      }
-    },
-    {
-      "name": "ComprarPasodeSombra",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "comprar_pasode_sombra",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/ComprarPasodeSombraProcedure.java"
         ]
       }
     }
@@ -979,9 +1001,8 @@
       "gui.mine_x_hunter.skill_menu.label_activar_desactivar_garras_tec": "Activar / Desactivar Garras (Tecla X)",
       "gui.mine_x_hunter.skill_menu.label_recibir_100_golpes_de_veneno_o_r": "Recibir 100 golpes de veneno o rayo",
       "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: ",
-      "key.mine_x_hunter.shadow_step": "Shadow Step",
-      "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)",
-      "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)"
+      "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)",
+      "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)"
     }
   },
   "metadata": {
