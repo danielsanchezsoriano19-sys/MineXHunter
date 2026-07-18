@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mine_x_hunter:item/prueba_adivinacion_de_agua_2"
+  },
+  "render_type": "translucent"
+}

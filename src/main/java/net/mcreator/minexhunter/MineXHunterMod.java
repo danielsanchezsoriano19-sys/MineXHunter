@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.minexhunter.init.MineXHunterModMenus;
 import net.mcreator.minexhunter.init.MineXHunterModItems;
+import net.mcreator.minexhunter.init.MineXHunterModBlocks;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -42,6 +43,7 @@ public class MineXHunterMod {
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = context.getModEventBus();
+		MineXHunterModBlocks.REGISTRY.register(bus);
 		MineXHunterModItems.REGISTRY.register(bus);
 		MineXHunterModMenus.REGISTRY.register(bus);
 		// Start of user code block mod init

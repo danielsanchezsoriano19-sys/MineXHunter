@@ -661,6 +661,22 @@
           "src/main/java/net/mcreator/minexhunter/procedures/EntrenamientoZoldyckProcedure.java"
         ]
       }
+    },
+    {
+      "name": "WaterDivination",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_divination",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/block/WaterDivinationBlock.java",
+          "src/main/resources/data/mine_x_hunter/loot_tables/blocks/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/blockstates/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -832,7 +848,8 @@
       "item.mine_x_hunter.contrato_sangre_zoldyck": "Contrato Sangre Zoldyck",
       "key.mine_x_hunter.skill_menu_zoldyick_key": "Skill Menu Zoldyick Key",
       "key.mine_x_hunter.renkey": "Ren",
-      "key.mine_x_hunter.blood_lust_key": "Blood Lust"
+      "key.mine_x_hunter.blood_lust_key": "Blood Lust",
+      "block.mine_x_hunter.water_divination": "Water Divination"
     }
   },
   "metadata": {
@@ -841,6 +858,7 @@
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModBlocks.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
       "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
