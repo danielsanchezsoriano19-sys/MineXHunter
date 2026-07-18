@@ -11,7 +11,6 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.SectionPos;
 
 import net.mcreator.minexhunter.procedures.BotonComprarOnKeyPressedProcedure;
-import net.mcreator.minexhunter.procedures.BotonComprarInmunidadOnKeyPressedProcedure;
 import net.mcreator.minexhunter.MineXHunterMod;
 
 import java.util.function.Supplier;
@@ -43,10 +42,6 @@ public record SkillMenuButtonMessage(int buttonID, int x, int y, int z) {
 		if (buttonID == 0) {
 
 			BotonComprarOnKeyPressedProcedure.execute(world, x, y, z, entity);
-		}
-		if (buttonID == 1) {
-
-			BotonComprarInmunidadOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

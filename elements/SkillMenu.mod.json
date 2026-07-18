@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 176,
-    "height": 166,
+    "width": 223,
+    "height": 198,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -15,15 +15,15 @@
         "data": {
           "name": "label_habilidades_zoldyck",
           "text": {
-            "fixedValue": "Habilidades Zoldyck"
+            "fixedValue": "=== MANSIÓN ZOLDYCK ==="
           },
           "color": {
             "value": -65536,
             "falpha": 0.0
           },
           "hasShadow": false,
-          "x": 161,
-          "y": 45,
+          "x": 149,
+          "y": 26,
           "locked": false
         }
       },
@@ -38,24 +38,59 @@
           },
           "width": 135,
           "height": 20,
-          "x": 149,
-          "y": 78,
+          "x": 144,
+          "y": 46,
           "locked": false
         }
       },
       {
-        "type": "button",
+        "type": "label",
         "data": {
-          "name": "button_comprar_inmunidad_20_xp",
-          "text": "Comprar Inmunidad (20 XP)",
-          "isUndecorated": false,
-          "onClick": {
-            "name": "BotonComprarInmunidadOnKeyPressed"
+          "name": "label_activar_desactivar_garras_tec",
+          "text": {
+            "fixedValue": "Activar / Desactivar Garras (Tecla X)"
           },
-          "width": 150,
-          "height": 20,
-          "x": 140,
-          "y": 129,
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 114,
+          "y": 74,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_inmunidad_pasiva",
+          "text": {
+            "fixedValue": "Inmunidad Pasiva: "
+          },
+          "color": {
+            "value": -6750055,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 163,
+          "y": 95,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_recibir_100_golpes_de_veneno_o_r",
+          "text": {
+            "fixedValue": "Recibir 100 golpes de veneno o rayo"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 118,
+          "y": 113,
           "locked": false
         }
       }

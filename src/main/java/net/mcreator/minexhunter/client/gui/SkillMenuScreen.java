@@ -22,7 +22,6 @@ public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> impl
 	private final Player entity;
 	private boolean menuStateUpdateActive = false;
 	private Button button_comprar_garras_15_xp;
-	private Button button_comprar_inmunidad_20_xp;
 	private static final ResourceLocation BACKGROUND = new ResourceLocation("mine_x_hunter:textures/screens/skill_menu.png");
 
 	public SkillMenuScreen(SkillMenuMenu container, Inventory inventory, Component text) {
@@ -32,8 +31,8 @@ public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> impl
 		this.y = container.y;
 		this.z = container.z;
 		this.entity = container.entity;
-		this.imageWidth = 176;
-		this.imageHeight = 166;
+		this.imageWidth = 223;
+		this.imageHeight = 198;
 	}
 
 	@Override
@@ -69,7 +68,10 @@ public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> impl
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck"), 35, 8, -65536, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck"), 47, 5, -65536, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mine_x_hunter.skill_menu.label_activar_desactivar_garras_tec"), 12, 53, -12829636, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva"), 61, 74, -6750055, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.mine_x_hunter.skill_menu.label_recibir_100_golpes_de_veneno_o_r"), 16, 92, -12829636, false);
 	}
 
 	@Override
@@ -82,16 +84,7 @@ public class SkillMenuScreen extends AbstractContainerScreen<SkillMenuMenu> impl
 				MineXHunterMod.PACKET_HANDLER.sendToServer(new SkillMenuButtonMessage(0, x, y, z));
 				SkillMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		}).bounds(this.leftPos + 23, this.topPos + 41, 135, 20).build();
+		}).bounds(this.leftPos + 42, this.topPos + 25, 135, 20).build();
 		this.addRenderableWidget(button_comprar_garras_15_xp);
-		button_comprar_inmunidad_20_xp = Button.builder(Component.translatable("gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp"), e -> {
-			int x = SkillMenuScreen.this.x;
-			int y = SkillMenuScreen.this.y;
-			if (true) {
-				MineXHunterMod.PACKET_HANDLER.sendToServer(new SkillMenuButtonMessage(1, x, y, z));
-				SkillMenuButtonMessage.handleButtonAction(entity, 1, x, y, z);
-			}
-		}).bounds(this.leftPos + 14, this.topPos + 92, 150, 20).build();
-		this.addRenderableWidget(button_comprar_inmunidad_20_xp);
 	}
 }

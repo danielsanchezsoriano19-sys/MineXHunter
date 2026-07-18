@@ -843,27 +843,30 @@
       "key.mine_x_hunter.boton_comprar": "Boton Comprar",
       "key.mine_x_hunter.boton_comprar_inmunidad": "Boton Comprar Inmunidad",
       "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
-      "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "Habilidades Zoldyck",
+      "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "\u003d\u003d\u003d MANSIÓN ZOLDYCK \u003d\u003d\u003d",
       "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",
       "item.mine_x_hunter.contrato_sangre_zoldyck": "Contrato Sangre Zoldyck",
       "key.mine_x_hunter.skill_menu_zoldyick_key": "Skill Menu Zoldyick Key",
       "key.mine_x_hunter.renkey": "Ren",
       "key.mine_x_hunter.blood_lust_key": "Blood Lust",
-      "block.mine_x_hunter.water_divination": "Water Divination"
+      "block.mine_x_hunter.water_divination": "Water Divination",
+      "gui.mine_x_hunter.skill_menu.label_activar_desactivar_garras_tec": "Activar / Desactivar Garras (Tecla X)",
+      "gui.mine_x_hunter.skill_menu.label_recibir_100_golpes_de_veneno_o_r": "Recibir 100 golpes de veneno o rayo",
+      "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: "
     }
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModBlocks.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
-      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+      "src/main/resources/META-INF/mods.toml"
     ]
   },
   "foldersRoot": {
