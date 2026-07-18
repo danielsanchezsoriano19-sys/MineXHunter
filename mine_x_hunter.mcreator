@@ -677,6 +677,120 @@
           "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
         ]
       }
+    },
+    {
+      "name": "ShadowStepOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_step_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ShadowStepOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ShadowStep",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_step",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/ShadowStepMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "ShadowStepPassive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shadow_step_passive",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ShadowStepPassiveProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ComprarPasodeSombra",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "comprar_pasode_sombra",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ComprarPasodeSombraProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -829,6 +943,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "unlocked_shasowstep",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "shadowstep_cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -852,7 +978,10 @@
       "block.mine_x_hunter.water_divination": "Water Divination",
       "gui.mine_x_hunter.skill_menu.label_activar_desactivar_garras_tec": "Activar / Desactivar Garras (Tecla X)",
       "gui.mine_x_hunter.skill_menu.label_recibir_100_golpes_de_veneno_o_r": "Recibir 100 golpes de veneno o rayo",
-      "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: "
+      "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: ",
+      "key.mine_x_hunter.shadow_step": "Shadow Step",
+      "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)",
+      "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)"
     }
   },
   "metadata": {

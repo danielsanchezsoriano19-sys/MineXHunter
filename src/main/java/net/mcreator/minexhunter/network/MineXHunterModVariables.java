@@ -109,6 +109,8 @@ public class MineXHunterModVariables {
 					clone.SedSangreDesbloqueada = original.SedSangreDesbloqueada;
 					clone.TipoHatsu = original.TipoHatsu;
 					clone.zoldyck_training = original.zoldyck_training;
+					clone.unlocked_shasowstep = original.unlocked_shasowstep;
+					clone.shadowstep_cooldown = original.shadowstep_cooldown;
 					if (!event.isWasDeath()) {
 					}
 				});
@@ -324,6 +326,8 @@ public class MineXHunterModVariables {
 		public boolean SedSangreDesbloqueada = false;
 		public String TipoHatsu = "Ninguno";
 		public double zoldyck_training = 0;
+		public boolean unlocked_shasowstep = false;
+		public double shadowstep_cooldown = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -352,6 +356,8 @@ public class MineXHunterModVariables {
 			nbt.putBoolean("SedSangreDesbloqueada", SedSangreDesbloqueada);
 			nbt.putString("TipoHatsu", TipoHatsu);
 			nbt.putDouble("zoldyck_training", zoldyck_training);
+			nbt.putBoolean("unlocked_shasowstep", unlocked_shasowstep);
+			nbt.putDouble("shadowstep_cooldown", shadowstep_cooldown);
 			return nbt;
 		}
 
@@ -381,6 +387,8 @@ public class MineXHunterModVariables {
 			SedSangreDesbloqueada = nbt.getBoolean("SedSangreDesbloqueada");
 			TipoHatsu = nbt.getString("TipoHatsu");
 			zoldyck_training = nbt.getDouble("zoldyck_training");
+			unlocked_shasowstep = nbt.getBoolean("unlocked_shasowstep");
+			shadowstep_cooldown = nbt.getDouble("shadowstep_cooldown");
 		}
 
 		public void markSyncDirty() {
@@ -427,6 +435,8 @@ public class MineXHunterModVariables {
 						cap.SedSangreDesbloqueada = message.data().SedSangreDesbloqueada;
 						cap.TipoHatsu = message.data().TipoHatsu;
 						cap.zoldyck_training = message.data().zoldyck_training;
+						cap.unlocked_shasowstep = message.data().unlocked_shasowstep;
+						cap.shadowstep_cooldown = message.data().shadowstep_cooldown;
 					});
 			});
 			context.setPacketHandled(true);

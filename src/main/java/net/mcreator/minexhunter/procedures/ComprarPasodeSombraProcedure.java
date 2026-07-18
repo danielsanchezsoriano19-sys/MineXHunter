@@ -12,16 +12,16 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.minexhunter.network.MineXHunterModVariables;
 
-public class BotonComprarOnKeyPressedProcedure {
+public class ComprarPasodeSombraProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= 15 && entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).unlocked_claws == false) {
+		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= 25 && entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).unlocked_shasowstep == false) {
 			if (entity instanceof Player _player)
-				_player.giveExperiencePoints(-15);
+				_player.giveExperiencePoints(-25);
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
-					capability.unlocked_claws = true;
+					capability.unlocked_shasowstep = true;
 					capability.markSyncDirty();
 				});
 			}

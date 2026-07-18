@@ -3,7 +3,7 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 223,
+    "width": 263,
     "height": 198,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
@@ -22,7 +22,7 @@
             "falpha": 0.0
           },
           "hasShadow": false,
-          "x": 149,
+          "x": 147,
           "y": 26,
           "locked": false
         }
@@ -38,7 +38,7 @@
           },
           "width": 135,
           "height": 20,
-          "x": 144,
+          "x": 141,
           "y": 46,
           "locked": false
         }
@@ -55,7 +55,7 @@
             "falpha": 0.0
           },
           "hasShadow": false,
-          "x": 114,
+          "x": 113,
           "y": 74,
           "locked": false
         }
@@ -91,6 +91,39 @@
           "hasShadow": false,
           "x": 118,
           "y": 113,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_comprar_paso_de_sombra_25_xp",
+          "text": "Comprar Paso de Sombra (25 XP)",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "ComprarPasodeSombra"
+          },
+          "width": 175,
+          "height": 20,
+          "x": 120,
+          "y": 137,
+          "locked": false
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_activar_desactivar_paso_de_som",
+          "text": {
+            "fixedValue": "Activar / Desactivar Paso de Sombra (Tecla C)"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 92,
+          "y": 168,
           "locked": false
         }
       }
