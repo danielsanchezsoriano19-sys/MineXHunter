@@ -112,6 +112,19 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping SHADOW_STEP = new KeyMapping("key.mine_x_hunter.shadow_step", GLFW.GLFW_KEY_C, "key.categories.misc") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				MineXHunterMod.PACKET_HANDLER.sendToServer(new ShadowStepMessage(0, 0));
+				ShadowStepMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -122,6 +135,7 @@ public class MineXHunterModKeyMappings {
 		event.register(BOTON_COMPRAR_INMUNIDAD);
 		event.register(TOGGLE_CLAWS_KEY);
 		event.register(BLOOD_LUST_KEY);
+		event.register(SHADOW_STEP);
 	}
 
 	@Mod.EventBusSubscriber(Dist.CLIENT)
@@ -136,6 +150,7 @@ public class MineXHunterModKeyMappings {
 				BOTON_COMPRAR_INMUNIDAD.consumeClick();
 				TOGGLE_CLAWS_KEY.consumeClick();
 				BLOOD_LUST_KEY.consumeClick();
+				SHADOW_STEP.consumeClick();
 			}
 		}
 	}

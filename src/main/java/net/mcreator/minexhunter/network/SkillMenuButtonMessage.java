@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.SectionPos;
 
+import net.mcreator.minexhunter.procedures.ComprarPasodeSombraProcedure;
 import net.mcreator.minexhunter.procedures.BotonComprarOnKeyPressedProcedure;
 import net.mcreator.minexhunter.MineXHunterMod;
 
@@ -42,6 +43,10 @@ public record SkillMenuButtonMessage(int buttonID, int x, int y, int z) {
 		if (buttonID == 0) {
 
 			BotonComprarOnKeyPressedProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			ComprarPasodeSombraProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

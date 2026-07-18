@@ -1,0 +1,12 @@
+{
+  "_fv": 85,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "C",
+    "keyBindingName": "Shadow Step",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "ShadowStepOnKeyPressed"
+    }
+  }
+}
