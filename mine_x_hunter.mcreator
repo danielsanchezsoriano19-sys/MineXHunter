@@ -677,6 +677,28 @@
           "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
         ]
       }
+    },
+    {
+      "name": "BloodlustVSten",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bloodlust_v_sten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/BloodlustVStenProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -857,16 +879,16 @@
   },
   "metadata": {
     "files": [
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModBlocks.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
+      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/resources/META-INF/mods.toml"
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
     ]
   },
   "foldersRoot": {
