@@ -715,7 +715,7 @@
     {
       "name": "ShadowStepOnKeyPressed",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "shadow_step_on_key_pressed",
       "metadata": {
@@ -749,7 +749,7 @@
     {
       "name": "ComprarPasodeSombra",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "comprar_pasode_sombra",
       "metadata": {
@@ -783,7 +783,7 @@
     {
       "name": "ShadowStepPassive",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "shadow_step_passive",
       "metadata": {
