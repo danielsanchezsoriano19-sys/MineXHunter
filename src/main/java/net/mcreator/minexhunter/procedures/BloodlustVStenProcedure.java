@@ -1,6 +1,15 @@
 package net.mcreator.minexhunter.procedures;
 
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+
+import net.minecraft.world.entity.Entity;
+
+import net.mcreator.minexhunter.network.MineXHunterModVariables;
+
+import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class BloodlustVStenProcedure {
