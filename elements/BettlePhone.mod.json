@@ -1,0 +1,78 @@
+{
+  "_fv": 85,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 222,
+    "height": 185,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_beetle_os_v07",
+          "text": {
+            "fixedValue": "=== BEETLE OS v07 ==="
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "hasShadow": false,
+          "x": 155,
+          "y": 43,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_gps_coordenadas",
+          "text": "🌐 Acceder al Sitio Web de Cazadores",
+          "isUndecorated": false,
+          "width": 120,
+          "height": 20,
+          "x": 151,
+          "y": 72,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_escaner_biologico",
+          "text": "📜 Traductor Arqueológico Universal",
+          "isUndecorated": false,
+          "width": 120,
+          "height": 20,
+          "x": 152,
+          "y": 112,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_llamar_mayordomo",
+          "text": "Subasta",
+          "isUndecorated": false,
+          "width": 115,
+          "height": 20,
+          "x": 154,
+          "y": 152,
+          "locked": false
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 24,
+      "sy": 18,
+      "ox": 18,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
