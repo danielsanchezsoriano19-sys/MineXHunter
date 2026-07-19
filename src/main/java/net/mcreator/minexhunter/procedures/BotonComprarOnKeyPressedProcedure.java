@@ -18,7 +18,7 @@ public class BotonComprarOnKeyPressedProcedure {
 			return;
 		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= 15 && entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).unlocked_claws == false) {
 			if (entity instanceof Player _player)
-				_player.giveExperiencePoints(-15);
+				_player.giveExperiencePoints(-270);
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
 					capability.unlocked_claws = true;

@@ -18,7 +18,7 @@ public class ComprarPasodeSombraProcedure {
 			return;
 		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= 25 && entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).unlocked_shasowstep == false) {
 			if (entity instanceof Player _player)
-				_player.giveExperiencePoints(-25);
+				_player.giveExperiencePoints(-450);
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
 					capability.unlocked_shasowstep = true;

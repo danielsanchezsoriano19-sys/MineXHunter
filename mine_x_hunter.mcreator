@@ -387,52 +387,6 @@
       }
     },
     {
-      "name": "BotonComprarInmunidadOnKeyPressed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "boton_comprar_inmunidad_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarInmunidadOnKeyPressedProcedure.java"
-        ]
-      }
-    },
-    {
-      "name": "BotonComprarInmunidad",
-      "type": "keybind",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "boton_comprar_inmunidad",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/network/BotonComprarInmunidadMessage.java"
-        ]
-      }
-    },
-    {
       "name": "ToggleClawsKeyOnKeyPressed",
       "type": "procedure",
       "compiles": true,
@@ -715,7 +669,7 @@
     {
       "name": "ShadowStepOnKeyPressed",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "shadow_step_on_key_pressed",
       "metadata": {
@@ -749,7 +703,7 @@
     {
       "name": "ComprarPasodeSombra",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "comprar_pasode_sombra",
       "metadata": {
@@ -783,7 +737,7 @@
     {
       "name": "ShadowStepPassive",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "shadow_step_passive",
       "metadata": {
@@ -989,7 +943,6 @@
       "gui.mine_x_hunter.aura_nen_overlay.label_1": "1",
       "key.mine_x_hunter.tenkey": "Ten",
       "key.mine_x_hunter.boton_comprar": "Boton Comprar",
-      "key.mine_x_hunter.boton_comprar_inmunidad": "Boton Comprar Inmunidad",
       "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
       "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "\u003d\u003d\u003d MANSIÓN ZOLDYCK \u003d\u003d\u003d",
       "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",
@@ -1008,16 +961,16 @@
   },
   "metadata": {
     "files": [
-      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModScreens.java",
       "src/main/java/net/mcreator/minexhunter/network/MenuStateUpdateMessage.java",
+      "src/main/java/net/mcreator/minexhunter/init/MineXHunterModMenus.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModKeyMappings.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModBlocks.java",
       "src/main/java/net/mcreator/minexhunter/init/MineXHunterModItems.java",
-      "src/main/resources/META-INF/mods.toml",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java",
       "src/main/java/net/mcreator/minexhunter/network/MineXHunterModVariables.java",
-      "src/main/java/net/mcreator/minexhunter/MineXHunterMod.java"
+      "src/main/resources/META-INF/mods.toml"
     ]
   },
   "foldersRoot": {
