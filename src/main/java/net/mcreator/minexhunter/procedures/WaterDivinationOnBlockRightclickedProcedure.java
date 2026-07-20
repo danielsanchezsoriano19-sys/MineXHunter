@@ -28,6 +28,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A75Something is wrong... The leaf begins to wither as a bizarre aura corrupts the water."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 		if ((entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TipoHatsu).equals("Enhancement")) {
 			{
@@ -41,6 +47,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7aThe water level starts rising rapidly! It's overflowing from the edges of the cup."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 		if ((entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TipoHatsu).equals("Transmutation")) {
 			{
@@ -54,6 +66,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7dA sweet, tingling aroma fills the air. The chemical properties of the water have shifted."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 		if ((entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TipoHatsu).equals("Emission")) {
 			{
@@ -67,6 +85,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7cThe liquid begins to glow softly, radiating a vibrant light from within the cup."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 		if ((entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TipoHatsu).equals("Conjuration")) {
 			{
@@ -80,6 +104,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A7bSmall, crystalline impurities slowly materialize and sink to the bottom of the water."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 		if ((entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).TipoHatsu).equals("Manipulation")) {
 			{
@@ -93,6 +123,12 @@ public class WaterDivinationOnBlockRightclickedProcedure {
 				_level.updateNeighborsAt(BlockPos.containing(x, y, z), _level.getBlockState(BlockPos.containing(x, y, z)).getBlock());
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A76The water remains still, yet the leaf on top begins to spin and move on its own accord."), true);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.HatsuRevelado = true;
+					capability.markSyncDirty();
+				});
+			}
 		}
 	}
 }

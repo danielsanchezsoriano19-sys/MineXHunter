@@ -112,6 +112,7 @@ public class MineXHunterModVariables {
 					clone.shadowstep_cooldown = original.shadowstep_cooldown;
 					clone.bettle_network = original.bettle_network;
 					clone.prob_local = original.prob_local;
+					clone.HatsuRevelado = original.HatsuRevelado;
 					if (!event.isWasDeath()) {
 						clone.Probabilidad = original.Probabilidad;
 					}
@@ -332,6 +333,7 @@ public class MineXHunterModVariables {
 		public double Probabilidad = 0;
 		public boolean bettle_network = true;
 		public double prob_local = 0;
+		public boolean HatsuRevelado = false;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -364,6 +366,7 @@ public class MineXHunterModVariables {
 			nbt.putDouble("Probabilidad", Probabilidad);
 			nbt.putBoolean("bettle_network", bettle_network);
 			nbt.putDouble("prob_local", prob_local);
+			nbt.putBoolean("HatsuRevelado", HatsuRevelado);
 			return nbt;
 		}
 
@@ -397,6 +400,7 @@ public class MineXHunterModVariables {
 			Probabilidad = nbt.getDouble("Probabilidad");
 			bettle_network = nbt.getBoolean("bettle_network");
 			prob_local = nbt.getDouble("prob_local");
+			HatsuRevelado = nbt.getBoolean("HatsuRevelado");
 		}
 
 		public void markSyncDirty() {
@@ -447,6 +451,7 @@ public class MineXHunterModVariables {
 						cap.Probabilidad = message.data().Probabilidad;
 						cap.bettle_network = message.data().bettle_network;
 						cap.prob_local = message.data().prob_local;
+						cap.HatsuRevelado = message.data().HatsuRevelado;
 					});
 			});
 			context.setPacketHandled(true);
