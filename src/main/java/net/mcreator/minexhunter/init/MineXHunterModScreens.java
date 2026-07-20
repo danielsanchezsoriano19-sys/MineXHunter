@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.minexhunter.client.gui.SkillMenuScreen;
+import net.mcreator.minexhunter.client.gui.BettlePhoneScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MineXHunterModScreens {
@@ -18,6 +19,7 @@ public class MineXHunterModScreens {
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			MenuScreens.register(MineXHunterModMenus.SKILL_MENU.get(), SkillMenuScreen::new);
+			MenuScreens.register(MineXHunterModMenus.BETTLE_PHONE.get(), BettlePhoneScreen::new);
 		});
 	}
 

@@ -73,19 +73,6 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping BOTON_COMPRAR_INMUNIDAD = new KeyMapping("key.mine_x_hunter.boton_comprar_inmunidad", InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_LEFT, "key.categories.misc") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				MineXHunterMod.PACKET_HANDLER.sendToServer(new BotonComprarInmunidadMessage(0, 0));
-				BotonComprarInmunidadMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	public static final KeyMapping TOGGLE_CLAWS_KEY = new KeyMapping("key.mine_x_hunter.toggle_claws_key", GLFW.GLFW_KEY_X, "key.categories.misc") {
 		private boolean isDownOld = false;
 
@@ -132,7 +119,6 @@ public class MineXHunterModKeyMappings {
 		event.register(SKILL_MENU_ZOLDYICK_KEY);
 		event.register(RENKEY);
 		event.register(BOTON_COMPRAR);
-		event.register(BOTON_COMPRAR_INMUNIDAD);
 		event.register(TOGGLE_CLAWS_KEY);
 		event.register(BLOOD_LUST_KEY);
 		event.register(SHADOW_STEP);
@@ -147,7 +133,6 @@ public class MineXHunterModKeyMappings {
 				SKILL_MENU_ZOLDYICK_KEY.consumeClick();
 				RENKEY.consumeClick();
 				BOTON_COMPRAR.consumeClick();
-				BOTON_COMPRAR_INMUNIDAD.consumeClick();
 				TOGGLE_CLAWS_KEY.consumeClick();
 				BLOOD_LUST_KEY.consumeClick();
 				SHADOW_STEP.consumeClick();

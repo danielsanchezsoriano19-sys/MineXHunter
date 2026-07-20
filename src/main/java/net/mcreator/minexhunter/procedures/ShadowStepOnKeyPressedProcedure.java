@@ -27,12 +27,6 @@ public class ShadowStepOnKeyPressedProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 3, false, false));
 			if (entity instanceof Player _player)
 				_player.getFoodData().setFoodLevel((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 8);
-			{
-				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
-					capability.shadowstep_cooldown = 300;
-					capability.markSyncDirty();
-				});
-			}
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.phantom.swoop")), SoundSource.NEUTRAL, 1, (float) 1.5);
@@ -42,6 +36,12 @@ public class ShadowStepOnKeyPressedProcedure {
 			}
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("[Zoldyck] Paso de Sombra activado..."), false);
+			{
+				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
+					capability.shadowstep_cooldown = 300;
+					capability.markSyncDirty();
+				});
+			}
 		}
 	}
 }

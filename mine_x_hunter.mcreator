@@ -387,52 +387,6 @@
       }
     },
     {
-      "name": "BotonComprarInmunidadOnKeyPressed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "boton_comprar_inmunidad_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/procedures/BotonComprarInmunidadOnKeyPressedProcedure.java"
-        ]
-      }
-    },
-    {
-      "name": "BotonComprarInmunidad",
-      "type": "keybind",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "boton_comprar_inmunidad",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/minexhunter/network/BotonComprarInmunidadMessage.java"
-        ]
-      }
-    },
-    {
       "name": "ToggleClawsKeyOnKeyPressed",
       "type": "procedure",
       "compiles": true,
@@ -670,17 +624,10 @@
       "registry_name": "water_divination",
       "metadata": {
         "files": [
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_0.json",
           "src/main/java/net/mcreator/minexhunter/block/WaterDivinationBlock.java",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_3.json",
           "src/main/resources/data/mine_x_hunter/loot_tables/blocks/water_divination.json",
           "src/main/resources/assets/mine_x_hunter/blockstates/water_divination.json",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_2.json",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_6.json",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_1.json",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_4.json",
           "src/main/resources/assets/mine_x_hunter/models/block/water_divination.json",
-          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_5.json",
           "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
         ]
       }
@@ -830,10 +777,6 @@
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
             "name": "x",
             "type": "number"
           },
@@ -852,6 +795,32 @@
         ],
         "files": [
           "src/main/java/net/mcreator/minexhunter/procedures/WaterDivinationOnBlockRightclickedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BettlePhoneItem",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bettle_phone_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/item/BettlePhoneItemItem.java",
+          "src/main/resources/assets/mine_x_hunter/models/item/bettle_phone_item.json"
+        ]
+      }
+    },
+    {
+      "name": "BettlePhone",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bettle_phone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/world/inventory/BettlePhoneMenu.java",
+          "src/main/java/net/mcreator/minexhunter/client/gui/BettlePhoneScreen.java"
         ]
       }
     }
@@ -993,7 +962,7 @@
       "name": "TipoHatsu",
       "type": "string",
       "scope": "player_persistent",
-      "value": "\"\""
+      "value": "Ninguno"
     },
     {
       "name": "zoldyck_training",
@@ -1018,6 +987,12 @@
       "type": "number",
       "scope": "global",
       "value": "0"
+    },
+    {
+      "name": "bettle_network",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "true"
     }
   ],
   "sound_elements": [],
@@ -1030,7 +1005,6 @@
       "gui.mine_x_hunter.aura_nen_overlay.label_1": "1",
       "key.mine_x_hunter.tenkey": "Ten",
       "key.mine_x_hunter.boton_comprar": "Boton Comprar",
-      "key.mine_x_hunter.boton_comprar_inmunidad": "Boton Comprar Inmunidad",
       "gui.mine_x_hunter.skill_menu.button_comprar_inmunidad_20_xp": "Comprar Inmunidad (20 XP)",
       "gui.mine_x_hunter.skill_menu.label_habilidades_zoldyck": "\u003d\u003d\u003d MANSIÓN ZOLDYCK \u003d\u003d\u003d",
       "gui.mine_x_hunter.skill_menu.button_comprar_garras_15_xp": "Comprar Garras (15 XP)",

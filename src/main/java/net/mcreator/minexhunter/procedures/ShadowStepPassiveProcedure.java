@@ -35,7 +35,7 @@ public class ShadowStepPassiveProcedure {
 		if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).shadowstep_cooldown > 0) {
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
-					capability.shadowstep_cooldown = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).shadowstep_cooldown - 1;
+					capability.shadowstep_cooldown = entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).shadowstep_cooldown + -1;
 					capability.markSyncDirty();
 				});
 			}

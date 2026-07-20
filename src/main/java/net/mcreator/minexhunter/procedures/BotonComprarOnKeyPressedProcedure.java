@@ -7,8 +7,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.mcreator.minexhunter.network.MineXHunterModVariables;
 
@@ -17,8 +20,13 @@ public class BotonComprarOnKeyPressedProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof Player _plr ? _plr.experienceLevel : 0) >= 15 && entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).unlocked_claws == false) {
-			if (entity instanceof Player _player)
-				_player.giveExperiencePoints(-15);
+			{
+				Entity _ent = entity;
+				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "xp add @s -15 levels");
+				}
+			}
 			{
 				entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).ifPresent(capability -> {
 					capability.unlocked_claws = true;

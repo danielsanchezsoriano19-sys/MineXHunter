@@ -42,8 +42,8 @@ public class ZoldyckCombatLogicProcedure {
 			return;
 		if (sourceentity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).claws_active == true
 				&& (sourceentity instanceof LivingEntity _entUseItem0 ? _entUseItem0.getUseItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem()) {
-			if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2, 4, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.HARM, 1, (int) 0.5, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 60, 1));
 			world.addParticle(ParticleTypes.SWEEP_ATTACK, x, y, z, 0, 1, 0);
@@ -55,7 +55,7 @@ public class ZoldyckCombatLogicProcedure {
 				}
 			}
 			if (sourceentity instanceof Player _player)
-				_player.getFoodData().setFoodLevel((int) ((sourceentity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 1.5));
+				_player.getFoodData().setFoodLevel((sourceentity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 3);
 		}
 	}
 }
