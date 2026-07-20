@@ -37,8 +37,6 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MineXHunterModVariables {
-	public static double Probabilidad = 0;
-
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		MineXHunterMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handleData);
@@ -113,7 +111,9 @@ public class MineXHunterModVariables {
 					clone.unlocked_shasowstep = original.unlocked_shasowstep;
 					clone.shadowstep_cooldown = original.shadowstep_cooldown;
 					clone.bettle_network = original.bettle_network;
+					clone.prob_local = original.prob_local;
 					if (!event.isWasDeath()) {
+						clone.Probabilidad = original.Probabilidad;
 					}
 				});
 			});
@@ -329,7 +329,9 @@ public class MineXHunterModVariables {
 		public double zoldyck_training = 0;
 		public boolean unlocked_shasowstep = false;
 		public double shadowstep_cooldown = 0;
+		public double Probabilidad = 0;
 		public boolean bettle_network = true;
+		public double prob_local = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -359,7 +361,9 @@ public class MineXHunterModVariables {
 			nbt.putDouble("zoldyck_training", zoldyck_training);
 			nbt.putBoolean("unlocked_shasowstep", unlocked_shasowstep);
 			nbt.putDouble("shadowstep_cooldown", shadowstep_cooldown);
+			nbt.putDouble("Probabilidad", Probabilidad);
 			nbt.putBoolean("bettle_network", bettle_network);
+			nbt.putDouble("prob_local", prob_local);
 			return nbt;
 		}
 
@@ -390,7 +394,9 @@ public class MineXHunterModVariables {
 			zoldyck_training = nbt.getDouble("zoldyck_training");
 			unlocked_shasowstep = nbt.getBoolean("unlocked_shasowstep");
 			shadowstep_cooldown = nbt.getDouble("shadowstep_cooldown");
+			Probabilidad = nbt.getDouble("Probabilidad");
 			bettle_network = nbt.getBoolean("bettle_network");
+			prob_local = nbt.getDouble("prob_local");
 		}
 
 		public void markSyncDirty() {
@@ -438,7 +444,9 @@ public class MineXHunterModVariables {
 						cap.zoldyck_training = message.data().zoldyck_training;
 						cap.unlocked_shasowstep = message.data().unlocked_shasowstep;
 						cap.shadowstep_cooldown = message.data().shadowstep_cooldown;
+						cap.Probabilidad = message.data().Probabilidad;
 						cap.bettle_network = message.data().bettle_network;
+						cap.prob_local = message.data().prob_local;
 					});
 			});
 			context.setPacketHandled(true);

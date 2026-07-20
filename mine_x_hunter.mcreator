@@ -771,11 +771,15 @@
     {
       "name": "WaterDivinationOnBlockRightclicked",
       "type": "procedure",
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "water_divination_on_block_rightclicked",
       "metadata": {
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"
@@ -985,7 +989,7 @@
     {
       "name": "Probabilidad",
       "type": "number",
-      "scope": "global",
+      "scope": "player_lifetime",
       "value": "0"
     },
     {
@@ -993,6 +997,12 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "true"
+    },
+    {
+      "name": "prob_local",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
