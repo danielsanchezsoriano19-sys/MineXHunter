@@ -14,7 +14,246 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "states": [],
+    "states": [
+      {
+        "texture": "texture",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 0
+          }
+        ]
+      },
+      {
+        "texture": "texture_potenciador",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 1
+          }
+        ]
+      },
+      {
+        "texture": "texture",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 2
+          }
+        ]
+      },
+      {
+        "texture": "texture_emisor",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 3
+          }
+        ]
+      },
+      {
+        "texture": "texture_conjurador",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 4
+          }
+        ]
+      },
+      {
+        "texture": "texture",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 5
+          }
+        ]
+      },
+      {
+        "texture": "texture_especialista",
+        "textureTop": "",
+        "textureLeft": "",
+        "textureFront": "",
+        "textureRight": "",
+        "textureBack": "",
+        "renderType": 2,
+        "customModelName": "normal_cup5:default",
+        "particleTexture": "",
+        "hasCustomBoundingBox": false,
+        "boundingBoxes": [
+          {
+            "mx": 0.0,
+            "my": 0.0,
+            "mz": 0.0,
+            "Mx": 16.0,
+            "My": 16.0,
+            "Mz": 16.0,
+            "subtract": false
+          }
+        ],
+        "stateMap": [
+          {
+            "property": {
+              "min": 0,
+              "max": 6,
+              "name": "CUSTOM:fase",
+              "type": "integer"
+            },
+            "value": 6
+          }
+        ]
+      }
+    ],
     "animations": [],
     "itemTexture": "prueba_adivinacion_de_agua_2",
     "particleTexture": "",
@@ -37,7 +276,15 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "min": 0,
+        "max": 6,
+        "name": "CUSTOM:fase",
+        "type": "integer",
+        "value": 0
+      }
+    ],
     "name": "Water Divination",
     "specialInformation": {
       "fixedValue": []

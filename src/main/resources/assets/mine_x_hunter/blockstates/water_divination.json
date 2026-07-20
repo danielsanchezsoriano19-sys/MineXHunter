@@ -1,7 +1,25 @@
 {
   "variants": {
-    "": {
-      "model": "mine_x_hunter:block/water_divination"
+    "fase=0": {
+      "model": "mine_x_hunter:block/water_divination_0"
+    },
+    "fase=1": {
+      "model": "mine_x_hunter:block/water_divination_1"
+    },
+    "fase=2": {
+      "model": "mine_x_hunter:block/water_divination_2"
+    },
+    "fase=3": {
+      "model": "mine_x_hunter:block/water_divination_3"
+    },
+    "fase=4": {
+      "model": "mine_x_hunter:block/water_divination_4"
+    },
+    "fase=5": {
+      "model": "mine_x_hunter:block/water_divination_5"
+    },
+    "fase=6": {
+      "model": "mine_x_hunter:block/water_divination_6"
     }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "mine_x_hunter:custom/normal_cup5",
+  "textures": {
+    "all": "mine_x_hunter:block/texture_especialista",
+    "particle": "mine_x_hunter:block/texture",
+    "0": "mine_x_hunter:block/texture"
+  },
+  "render_type": "solid"
+}

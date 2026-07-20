@@ -670,10 +670,17 @@
       "registry_name": "water_divination",
       "metadata": {
         "files": [
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_0.json",
           "src/main/java/net/mcreator/minexhunter/block/WaterDivinationBlock.java",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_3.json",
           "src/main/resources/data/mine_x_hunter/loot_tables/blocks/water_divination.json",
           "src/main/resources/assets/mine_x_hunter/blockstates/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_2.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_6.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_1.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_4.json",
           "src/main/resources/assets/mine_x_hunter/models/block/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_5.json",
           "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
         ]
       }
@@ -813,6 +820,40 @@
           "src/main/java/net/mcreator/minexhunter/procedures/ShadowStepPassiveProcedure.java"
         ]
       }
+    },
+    {
+      "name": "WaterDivinationOnBlockRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "water_divination_on_block_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/WaterDivinationOnBlockRightclickedProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -821,12 +862,6 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
-    },
-    {
-      "name": "nentype",
-      "type": "string",
-      "scope": "player_persistent",
-      "value": "\"\""
     },
     {
       "name": "auramax",
@@ -958,7 +993,7 @@
       "name": "TipoHatsu",
       "type": "string",
       "scope": "player_persistent",
-      "value": "Ninguno"
+      "value": "\"\""
     },
     {
       "name": "zoldyck_training",
@@ -976,6 +1011,12 @@
       "name": "shadowstep_cooldown",
       "type": "number",
       "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Probabilidad",
+      "type": "number",
+      "scope": "global",
       "value": "0"
     }
   ],

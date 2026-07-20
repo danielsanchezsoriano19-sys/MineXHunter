@@ -37,6 +37,8 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MineXHunterModVariables {
+	public static double Probabilidad = 0;
+
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		MineXHunterMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handleData);
@@ -86,7 +88,6 @@ public class MineXHunterModVariables {
 			event.getOriginal().getCapability(PLAYER_VARIABLES).ifPresent(original -> {
 				event.getEntity().getCapability(PLAYER_VARIABLES).ifPresent(clone -> {
 					clone.Nendesbloqueado = original.Nendesbloqueado;
-					clone.nentype = original.nentype;
 					clone.auramax = original.auramax;
 					clone.aura_actual = original.aura_actual;
 					clone.TenActive = original.TenActive;
@@ -303,7 +304,6 @@ public class MineXHunterModVariables {
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
 		boolean _syncDirty = false;
 		public boolean Nendesbloqueado = false;
-		public String nentype = "\"\"";
 		public double auramax = 100.0;
 		public double aura_actual = 0.0;
 		public boolean TenActive = false;
@@ -324,7 +324,7 @@ public class MineXHunterModVariables {
 		public boolean SedSangreActiva = false;
 		public double BarraSedSangre = 0;
 		public boolean SedSangreDesbloqueada = false;
-		public String TipoHatsu = "Ninguno";
+		public String TipoHatsu = "\"\"";
 		public double zoldyck_training = 0;
 		public boolean unlocked_shasowstep = false;
 		public double shadowstep_cooldown = 0;
@@ -333,7 +333,6 @@ public class MineXHunterModVariables {
 		public CompoundTag serializeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putBoolean("Nendesbloqueado", Nendesbloqueado);
-			nbt.putString("nentype", nentype);
 			nbt.putDouble("auramax", auramax);
 			nbt.putDouble("aura_actual", aura_actual);
 			nbt.putBoolean("TenActive", TenActive);
@@ -364,7 +363,6 @@ public class MineXHunterModVariables {
 		@Override
 		public void deserializeNBT(CompoundTag nbt) {
 			Nendesbloqueado = nbt.getBoolean("Nendesbloqueado");
-			nentype = nbt.getString("nentype");
 			auramax = nbt.getDouble("auramax");
 			aura_actual = nbt.getDouble("aura_actual");
 			TenActive = nbt.getBoolean("TenActive");
@@ -412,7 +410,6 @@ public class MineXHunterModVariables {
 				if (!context.getDirection().getReceptionSide().isServer() && message.data != null)
 					Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES).ifPresent(cap -> {
 						cap.Nendesbloqueado = message.data().Nendesbloqueado;
-						cap.nentype = message.data().nentype;
 						cap.auramax = message.data().auramax;
 						cap.aura_actual = message.data().aura_actual;
 						cap.TenActive = message.data().TenActive;
