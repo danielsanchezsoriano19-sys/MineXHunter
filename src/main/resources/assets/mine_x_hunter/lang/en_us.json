@@ -17,5 +17,10 @@
   "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: ",
   "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)",
   "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)",
-  "key.mine_x_hunter.shadow_step": "Shadow Step"
+  "key.mine_x_hunter.shadow_step": "Shadow Step",
+  "item.mine_x_hunter.bettle_phone_item": "Bettle Phone Item",
+  "gui.mine_x_hunter.bettle_phone.button_escaner_biologico": "📜 Traductor Arqueológico Universal",
+  "gui.mine_x_hunter.bettle_phone.button_llamar_mayordomo": "Subasta",
+  "gui.mine_x_hunter.bettle_phone.label_beetle_os_v07": "\u003d\u003d\u003d BEETLE OS v07 \u003d\u003d\u003d",
+  "gui.mine_x_hunter.bettle_phone.button_gps_coordenadas": "🌐 Acceder al Sitio Web de Cazadores"
 }

@@ -624,10 +624,17 @@
       "registry_name": "water_divination",
       "metadata": {
         "files": [
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_0.json",
           "src/main/java/net/mcreator/minexhunter/block/WaterDivinationBlock.java",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_3.json",
           "src/main/resources/data/mine_x_hunter/loot_tables/blocks/water_divination.json",
           "src/main/resources/assets/mine_x_hunter/blockstates/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_2.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_6.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_1.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_4.json",
           "src/main/resources/assets/mine_x_hunter/models/block/water_divination.json",
+          "src/main/resources/assets/mine_x_hunter/models/block/water_divination_5.json",
           "src/main/resources/assets/mine_x_hunter/models/item/water_divination.json"
         ]
       }
@@ -771,7 +778,7 @@
     {
       "name": "WaterDivinationOnBlockRightclicked",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "water_divination_on_block_rightclicked",
       "metadata": {
@@ -825,6 +832,36 @@
         "files": [
           "src/main/java/net/mcreator/minexhunter/world/inventory/BettlePhoneMenu.java",
           "src/main/java/net/mcreator/minexhunter/client/gui/BettlePhoneScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "CheckHatsu",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "check_hatsu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/command/CheckHatsuCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "Hatsutypecommand",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hatsutypecommand",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/HatsutypecommandProcedure.java"
         ]
       }
     }
@@ -1028,7 +1065,12 @@
       "gui.mine_x_hunter.skill_menu.label_inmunidad_pasiva": "Inmunidad Pasiva: ",
       "gui.mine_x_hunter.skill_menu.label_activar_desactivar_paso_de_som": "Activar / Desactivar Paso de Sombra (Tecla C)",
       "gui.mine_x_hunter.skill_menu.button_comprar_paso_de_sombra_25_xp": "Comprar Paso de Sombra (25 XP)",
-      "key.mine_x_hunter.shadow_step": "Shadow Step"
+      "key.mine_x_hunter.shadow_step": "Shadow Step",
+      "item.mine_x_hunter.bettle_phone_item": "Bettle Phone Item",
+      "gui.mine_x_hunter.bettle_phone.button_escaner_biologico": "📜 Traductor Arqueológico Universal",
+      "gui.mine_x_hunter.bettle_phone.button_llamar_mayordomo": "Subasta",
+      "gui.mine_x_hunter.bettle_phone.label_beetle_os_v07": "\u003d\u003d\u003d BEETLE OS v07 \u003d\u003d\u003d",
+      "gui.mine_x_hunter.bettle_phone.button_gps_coordenadas": "🌐 Acceder al Sitio Web de Cazadores"
     }
   },
   "metadata": {
