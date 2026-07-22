@@ -864,6 +864,172 @@
           "src/main/java/net/mcreator/minexhunter/procedures/HatsutypecommandProcedure.java"
         ]
       }
+    },
+    {
+      "name": "TeclaModoPeleaOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tecla_modo_pelea_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/TeclaModoPeleaOnKeyPressedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "TeclaModoPelea",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tecla_modo_pelea",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/network/TeclaModoPeleaMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "GestorAnimacionesCombate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gestor_animaciones_combate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/GestorAnimacionesCombateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ControladorGolpesCombate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "controlador_golpes_combate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ControladorGolpesCombateProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "ManejadorClickDerechoDefensa",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "manejador_click_derecho_defensa",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/ManejadorClickDerechoDefensaProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "AbsorberDanoGuardia",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "absorber_dano_guardia",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/minexhunter/procedures/AbsorberDanoGuardiaProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1046,6 +1212,30 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "modopelea",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "bloqueando",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "combostep",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "lastattacktick",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1076,7 +1266,8 @@
       "gui.mine_x_hunter.bettle_phone.button_escaner_biologico": "📜 Traductor Arqueológico Universal",
       "gui.mine_x_hunter.bettle_phone.button_llamar_mayordomo": "Subasta",
       "gui.mine_x_hunter.bettle_phone.label_beetle_os_v07": "\u003d\u003d\u003d BEETLE OS v07 \u003d\u003d\u003d",
-      "gui.mine_x_hunter.bettle_phone.button_gps_coordenadas": "🌐 Acceder al Sitio Web de Cazadores"
+      "gui.mine_x_hunter.bettle_phone.button_gps_coordenadas": "🌐 Acceder al Sitio Web de Cazadores",
+      "key.mine_x_hunter.tecla_modo_pelea": "Tecla Modo Pelea"
     }
   },
   "metadata": {

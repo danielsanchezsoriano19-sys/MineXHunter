@@ -113,6 +113,10 @@ public class MineXHunterModVariables {
 					clone.bettle_network = original.bettle_network;
 					clone.prob_local = original.prob_local;
 					clone.HatsuRevelado = original.HatsuRevelado;
+					clone.modopelea = original.modopelea;
+					clone.bloqueando = original.bloqueando;
+					clone.combostep = original.combostep;
+					clone.lastattacktick = original.lastattacktick;
 					if (!event.isWasDeath()) {
 						clone.Probabilidad = original.Probabilidad;
 					}
@@ -334,6 +338,10 @@ public class MineXHunterModVariables {
 		public boolean bettle_network = true;
 		public double prob_local = 0;
 		public boolean HatsuRevelado = false;
+		public boolean modopelea = false;
+		public boolean bloqueando = false;
+		public double combostep = 0;
+		public double lastattacktick = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -367,6 +375,10 @@ public class MineXHunterModVariables {
 			nbt.putBoolean("bettle_network", bettle_network);
 			nbt.putDouble("prob_local", prob_local);
 			nbt.putBoolean("HatsuRevelado", HatsuRevelado);
+			nbt.putBoolean("modopelea", modopelea);
+			nbt.putBoolean("bloqueando", bloqueando);
+			nbt.putDouble("combostep", combostep);
+			nbt.putDouble("lastattacktick", lastattacktick);
 			return nbt;
 		}
 
@@ -401,6 +413,10 @@ public class MineXHunterModVariables {
 			bettle_network = nbt.getBoolean("bettle_network");
 			prob_local = nbt.getDouble("prob_local");
 			HatsuRevelado = nbt.getBoolean("HatsuRevelado");
+			modopelea = nbt.getBoolean("modopelea");
+			bloqueando = nbt.getBoolean("bloqueando");
+			combostep = nbt.getDouble("combostep");
+			lastattacktick = nbt.getDouble("lastattacktick");
 		}
 
 		public void markSyncDirty() {
@@ -452,6 +468,10 @@ public class MineXHunterModVariables {
 						cap.bettle_network = message.data().bettle_network;
 						cap.prob_local = message.data().prob_local;
 						cap.HatsuRevelado = message.data().HatsuRevelado;
+						cap.modopelea = message.data().modopelea;
+						cap.bloqueando = message.data().bloqueando;
+						cap.combostep = message.data().combostep;
+						cap.lastattacktick = message.data().lastattacktick;
 					});
 			});
 			context.setPacketHandled(true);
