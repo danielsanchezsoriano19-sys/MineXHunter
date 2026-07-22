@@ -1,28 +1,6 @@
 package net.mcreator.minexhunter.procedures;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.core.SectionPos;
-
-import net.mcreator.minexhunter.network.MineXHunterModVariables;
-import net.mcreator.minexhunter.MineXHunterMod;
-
-import javax.annotation.Nullable;
-
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(Dist.CLIENT)
 public class ControladorGolpesCombateProcedure {

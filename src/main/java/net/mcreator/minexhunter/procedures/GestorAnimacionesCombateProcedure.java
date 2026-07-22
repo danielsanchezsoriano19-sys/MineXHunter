@@ -1,8 +1,6 @@
 package net.mcreator.minexhunter.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.mcreator.minexhunter.network.MineXHunterModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class GestorAnimacionesCombateProcedure {
 	public static void execute(Entity entity) {

@@ -1,10 +1,6 @@
 package net.mcreator.minexhunter.procedures;
 
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.Component;
-
-import net.mcreator.minexhunter.network.MineXHunterModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class TeclaModoPeleaOnKeyPressedProcedure {
 	public static void execute(Entity entity) {
