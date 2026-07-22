@@ -6,6 +6,7 @@ package net.mcreator.minexhunter.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
@@ -24,12 +25,14 @@ public class MineXHunterModItems {
 	public static final RegistryObject<Item> WATER_DIVINATION;
 	public static final RegistryObject<Item> BETTLE_PHONE_ITEM;
 	public static final RegistryObject<Item> LICENCIADE_HUNTER;
+	public static final RegistryObject<Item> AURA_TEN_ENTITY_SPAWN_EGG;
 	static {
 		AWAKENING_OF_NEN = REGISTRY.register("awakening_of_nen", NacimientodenenItem::new);
 		CONTRATO_SANGRE_ZOLDYCK = REGISTRY.register("contrato_sangre_zoldyck", ContratoSangreZoldyckItem::new);
 		WATER_DIVINATION = block(MineXHunterModBlocks.WATER_DIVINATION);
 		BETTLE_PHONE_ITEM = REGISTRY.register("bettle_phone_item", BettlePhoneItemItem::new);
 		LICENCIADE_HUNTER = REGISTRY.register("licenciade_hunter", LicenciadeHunterItem::new);
+		AURA_TEN_ENTITY_SPAWN_EGG = REGISTRY.register("aura_ten_entity_spawn_egg", () -> new ForgeSpawnEggItem(MineXHunterModEntities.AURA_TEN_ENTITY, -1, -1, new Item.Properties()));
 	}
 
 	// Start of user code block custom items

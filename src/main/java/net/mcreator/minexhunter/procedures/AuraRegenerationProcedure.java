@@ -13,11 +13,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.minexhunter.network.MineXHunterModVariables;
+import net.mcreator.minexhunter.entity.AuraTenEntityEntity;
 
 import javax.annotation.Nullable;
 
@@ -153,6 +155,21 @@ public class AuraRegenerationProcedure {
 					}
 				}
 			}
+			if (entity.getCapability(MineXHunterModVariables.PLAYER_VARIABLES).orElseGet(MineXHunterModVariables.PlayerVariables::new).Nendesbloqueado == true) {
+				{
+					Entity _ent = (findEntityInWorldRange(world, AuraTenEntityEntity.class, x, y, z, 4));
+					double _tx = x;
+					double _ty = y;
+					double _tz = z;
+					_ent.teleportTo(_tx, _ty, _tz);
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(_tx, _ty, _tz, _ent.getYRot(), _ent.getXRot());
+				}
+			}
 		}
+	}
+
+	private static Entity findEntityInWorldRange(LevelAccessor world, Class<? extends Entity> clazz, double x, double y, double z, double range) {
+		return (Entity) world.getEntitiesOfClass(clazz, AABB.ofSize(new Vec3(x, y, z), range, range, range), e -> true).stream().sorted(Comparator.comparingDouble(e -> e.distanceToSqr(x, y, z))).findFirst().orElse(null);
 	}
 }

@@ -52,7 +52,7 @@ public class TenkeyMessage {
 			return;
 		if (type == 0) {
 
-			TenkeyOnKeyPressedProcedure.execute(entity);
+			TenkeyOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 
