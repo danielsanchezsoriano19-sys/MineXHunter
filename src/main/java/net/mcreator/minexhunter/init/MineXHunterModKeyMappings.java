@@ -112,19 +112,6 @@ public class MineXHunterModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping TECLA_MODO_PELEA = new KeyMapping("key.mine_x_hunter.tecla_modo_pelea", GLFW.GLFW_KEY_G, "key.categories.misc") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				MineXHunterMod.PACKET_HANDLER.sendToServer(new TeclaModoPeleaMessage(0, 0));
-				TeclaModoPeleaMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -135,7 +122,6 @@ public class MineXHunterModKeyMappings {
 		event.register(TOGGLE_CLAWS_KEY);
 		event.register(BLOOD_LUST_KEY);
 		event.register(SHADOW_STEP);
-		event.register(TECLA_MODO_PELEA);
 	}
 
 	@Mod.EventBusSubscriber(Dist.CLIENT)
@@ -150,7 +136,6 @@ public class MineXHunterModKeyMappings {
 				TOGGLE_CLAWS_KEY.consumeClick();
 				BLOOD_LUST_KEY.consumeClick();
 				SHADOW_STEP.consumeClick();
-				TECLA_MODO_PELEA.consumeClick();
 			}
 		}
 	}
