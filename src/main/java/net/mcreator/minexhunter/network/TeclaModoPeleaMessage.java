@@ -52,7 +52,7 @@ public class TeclaModoPeleaMessage {
 			return;
 		if (type == 0) {
 
-			TeclaModoPeleaOnKeyPressedProcedure.execute(world, x, y, z, entity);
+			TeclaModoPeleaOnKeyPressedProcedure.execute(entity);
 		}
 	}
 

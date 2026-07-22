@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"pose de pelea": {
+			"loop": true,
+			"animation_length": 3.5417,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [-2.5, 0, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"Right Arm": {
+					"rotation": [-72.5, -7.5, 0],
+					"position": [0, 0, 0]
+				},
+				"Left Arm": {
+					"rotation": [-72.5, 7.5, 0],
+					"position": [0, 0, 0]
+				},
+				"Right Leg": {
+					"rotation": [-45, 0, 0],
+					"position": [0, -1, 0]
+				},
+				"Left Leg": {
+					"rotation": [12.5, 0, 0]
+				},
+				"Left forearm": {
+					"rotation": [-69.1117, 16.4137, 6.1548]
+				},
+				"a2": {
+					"rotation": [45, 0, 0],
+					"position": [0, 0, 0]
+				},
+				"a1": {
+					"rotation": [20, 0, 0]
+				},
+				"Right forearm": {
+					"rotation": [-69.1117, -16.4137, -6.1548]
+				}
+			}
+		}
+	}
+}
