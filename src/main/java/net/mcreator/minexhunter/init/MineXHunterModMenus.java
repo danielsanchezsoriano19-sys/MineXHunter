@@ -16,7 +16,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.minexhunter.world.inventory.SkillMenuMenu;
-import net.mcreator.minexhunter.world.inventory.BettlePhoneMenu;
 import net.mcreator.minexhunter.network.MenuStateUpdateMessage;
 import net.mcreator.minexhunter.MineXHunterMod;
 
@@ -25,7 +24,6 @@ import java.util.Map;
 public class MineXHunterModMenus {
 	public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MineXHunterMod.MODID);
 	public static final RegistryObject<MenuType<SkillMenuMenu>> SKILL_MENU = REGISTRY.register("skill_menu", () -> IForgeMenuType.create(SkillMenuMenu::new));
-	public static final RegistryObject<MenuType<BettlePhoneMenu>> BETTLE_PHONE = REGISTRY.register("bettle_phone", () -> IForgeMenuType.create(BettlePhoneMenu::new));
 
 	public interface MenuAccessor {
 		Map<String, Object> getMenuState();
